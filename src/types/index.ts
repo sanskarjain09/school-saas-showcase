@@ -1,7 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 export type { LucideIcon };
 
-
 // ==========================================
 // SHARED & UTILITY TYPES
 // ==========================================
@@ -122,14 +121,12 @@ export interface ModuleFeature {
   text: string;
 }
 
-
-
 export interface ModuleCategory {
   id: string;
-  icon: LucideIcon; // Yahan pehle 'string' likha hoga, usko 'LucideIcon' kar do
+  icon: LucideIcon;
   title: string;
   description: string;
-  features: { id: string; text: string }[];
+  features: ModuleFeature[];
 }
 
 export interface AIFeatureItem {
