@@ -16,7 +16,7 @@ export function Contact() {
           <FadeUp>
             <div className="flex flex-col items-start max-w-xl">
               <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight text-foreground leading-[1.15]">
-                Let's build your dream campus.
+                Let&apos;s build your dream campus.
               </h2>
               
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
