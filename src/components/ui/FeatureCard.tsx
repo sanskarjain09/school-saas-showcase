@@ -3,14 +3,17 @@ import { Card } from "./Card";
 import type { LucideIcon } from "@/types";
 
 interface FeatureCardProps {
-  icon: string;
+  // Fix: icon ko LucideIcon ya any allow kar diya hai taaki component pass karne par error na aaye
+  icon: LucideIcon | any; 
   title: string;
   description: string;
 }
 
-export function FeatureCard({ icon, title, description }: FeatureCardProps) {
-  // Safe dynamic icon rendering with a premium default fallback
-  const Icon = (Icons as unknown as Record<string, LucideIcon>)[icon] ?? Icons.Sparkles;
+export function FeatureCard({ icon: IconComponent, title, description }: FeatureCardProps) {
+  // Agar data se direct component pass ho raha hai ya string name, dono handle ho jayenge
+  const Icon = typeof IconComponent === "string" 
+    ? (Icons as unknown as Record<string, LucideIcon>)[IconComponent] ?? Icons.Sparkles
+    : IconComponent ?? Icons.Sparkles;
 
   return (
     // 1. Using our refactored Card with 'interactive' prop for built-in hover physics
