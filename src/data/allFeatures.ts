@@ -1,5 +1,24 @@
 import type { ModuleCategory } from "@/types";
-
+import {
+  Building2,
+  LayoutDashboard,
+  Users2,
+  ShieldCheck,
+  GraduationCap,
+  FileCheck2,
+  MessagesSquare,
+  Wallet,
+  Bus,
+  BookMarked,
+  BedDouble,
+  Package,
+  Briefcase,
+  DoorOpen,
+  BadgeCheck,
+  BarChart3,
+  Smartphone,
+  Bot,
+} from "lucide-react";
 /**
  * Comprehensive, unfiltered feature list (250+ features) used only in the
  * dedicated "All Features" section — deliberately kept out of the curated
@@ -8,7 +27,7 @@ import type { ModuleCategory } from "@/types";
 export const allFeatureCategories: ModuleCategory[] = [
   {
     id: "all-saas",
-    icon: "Building2",
+    icon: Building2,
     title: "SaaS & Super Admin",
     description: "Platform-level control for the company operating CampusHub.",
     features: [
@@ -37,7 +56,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-school-admin",
-    icon: "LayoutDashboard",
+    icon: LayoutDashboard,
     title: "School Administration",
     description: "Core configuration every school sets up on day one.",
     features: [
@@ -55,7 +74,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-users",
-    icon: "Users2",
+    icon: Users2,
     title: "User Management",
     description: "Every person in the school, with the right profile and access.",
     features: [
@@ -70,7 +89,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-rbac",
-    icon: "ShieldCheck",
+    icon: ShieldCheck,
     title: "Roles & Permissions",
     description: "Fine-grained access control across the whole platform.",
     features: [
@@ -83,7 +102,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-academics",
-    icon: "GraduationCap",
+    icon: GraduationCap,
     title: "Academics",
     description: "Everything from admission to daily classroom operations.",
     features: [
@@ -106,7 +125,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-exams",
-    icon: "FileCheck2",
+    icon: FileCheck2,
     title: "Examination",
     description: "Every exam format, graded and published without spreadsheets.",
     features: [
@@ -124,7 +143,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-communication",
-    icon: "MessagesSquare",
+    icon: MessagesSquare,
     title: "Communication",
     description: "Reach parents and staff on the channel they actually check.",
     features: [
@@ -141,7 +160,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-finance",
-    icon: "Wallet",
+    icon: Wallet,
     title: "Finance",
     description: "Fee collection, payroll and accounting in one ledger.",
     features: [
@@ -161,7 +180,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-transport",
-    icon: "Bus",
+    icon: Bus,
     title: "Transport",
     description: "Routes, vehicles and live tracking for every bus.",
     features: [
@@ -175,7 +194,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-library",
-    icon: "BookMarked",
+    icon: BookMarked,
     title: "Library",
     description: "Cataloguing, issue and return, fully barcoded.",
     features: [
@@ -189,7 +208,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-hostel",
-    icon: "BedDouble",
+    icon: BedDouble,
     title: "Hostel",
     description: "Boarding operations for residential schools.",
     features: [
@@ -201,7 +220,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-inventory",
-    icon: "Package",
+    icon: Package,
     title: "Inventory",
     description: "Stock, suppliers and point of sale under one roof.",
     features: [
@@ -218,7 +237,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-hr",
-    icon: "Briefcase",
+    icon: Briefcase,
     title: "Human Resources",
     description: "Staff lifecycle management, from hire to promotion.",
     features: [
@@ -233,7 +252,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-visitor",
-    icon: "DoorOpen",
+    icon: DoorOpen,
     title: "Visitor Management",
     description: "A digital front desk register for people and post.",
     features: [
@@ -245,7 +264,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-certificates",
-    icon: "BadgeCheck",
+    icon: BadgeCheck,
     title: "Certificates & ID Cards",
     description: "Templated documents generated in bulk.",
     features: [
@@ -257,7 +276,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-reports",
-    icon: "BarChart3",
+    icon: BarChart3,
     title: "Reports",
     description: "Every module, reportable, exportable and auditable.",
     features: [
@@ -275,7 +294,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-mobile",
-    icon: "Smartphone",
+    icon: Smartphone,
     title: "Mobile Applications",
     description: "Native apps for every person in the school community.",
     features: [
@@ -287,7 +306,7 @@ export const allFeatureCategories: ModuleCategory[] = [
   },
   {
     id: "all-ai",
-    icon: "Bot",
+    icon: Bot,
     title: "AI Features",
     description: "AI woven through the platform, not bolted on.",
     features: [
