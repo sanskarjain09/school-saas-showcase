@@ -21,7 +21,7 @@ export default function NotFound() {
           This page took a wrong turn.
         </h1>
         <p className="mt-3 max-w-sm text-body text-muted">
-          The page you're looking for doesn't exist or may have moved. Let's get you back on track.
+          The page you&epos;re looking for doesn&epos;t exist or may have moved. Let&epos;s get you back on track.
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
