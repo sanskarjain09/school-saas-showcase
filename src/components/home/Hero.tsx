@@ -1,0 +1,162 @@
+"use client";
+
+import { useRef } from "react";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { Play, ArrowRight } from "lucide-react";
+
+import { heroData } from "@/data/hero";
+import { Container } from "@/components/ui/Container";
+import { RevealText } from "@/components/animations/RevealText";
+import { Counter } from "@/components/animations/Counter";
+import { DashboardMockup } from "./DashboardMockup";
+import { ANIMATION } from "@/lib/constants";
+
+export function Hero() {
+  const sceneRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // Fade in text elements
+      gsap.from("[data-hero-fade]", {
+        opacity: 0,
+        y: 20,
+        duration: ANIMATION.durationMedium,
+        ease: ANIMATION.ease,
+        stagger: ANIMATION.stagger,
+        delay: 0.6,
+      });
+
+      // Float up mockups and images
+      gsap.from("[data-hero-mockup]", {
+        opacity: 0,
+        y: 40,
+        scale: 0.96,
+        duration: ANIMATION.durationLong,
+        ease: ANIMATION.ease,
+        delay: 0.4,
+      });
+    },
+    { scope: sceneRef }
+  );
+
+  return (
+    <section
+      ref={sceneRef}
+      className="relative overflow-hidden pt-16 pb-16 lg:pt-24 lg:pb-24 bg-white dark:bg-background"
+    >
+      {/* Background Elements (Subtle & Minimal) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-1 opacity-40" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-2 opacity-40" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid opacity-50" />
+
+      <Container>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          
+          {/* Left Content */}
+          <div className="text-left flex flex-col items-start max-w-2xl">
+            
+            {/* Clean Eyebrow */}
+            <div data-hero-fade>
+              <p className="mb-4 text-sm font-semibold tracking-wider text-[#1A73E8] uppercase">
+                {heroData.eyebrow || "The Future of Education"}
+              </p>
+            </div>
+
+            {/* Premium Typography Scale for Headline */}
+            <RevealText
+              lines={heroData.headlineLines}
+              className="mt-2"
+              lineClassName="text-4xl mb-2 md:text-5xl lg:text-[56px] font-medium tracking-tight text-foreground leading-[1.15]"
+            />
+
+            {/* Clean Description Text */}
+            <p
+              data-hero-fade
+              className="mt-6 text-lg text-muted-foreground leading-relaxed"
+            >
+              {heroData.description}
+            </p>
+
+            {/* Google-Style Pill CTA Group */}
+            <div
+              data-hero-fade
+              className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            >
+              {/* Primary Blue Pill */}
+              <a 
+                href={heroData.primaryCta.href} 
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-[#1A73E8] px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-blue-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                {heroData.primaryCta.label}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              {/* Secondary Light Pill */}
+              <a 
+                href={heroData.secondaryCta.href} 
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 px-8 py-3.5 text-base font-medium text-foreground transition-all hover:bg-gray-200 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+              >
+                <Play className="w-4 h-4 fill-current" />
+                {heroData.secondaryCta.label}
+              </a>
+            </div>
+
+            {/* Minimalist Trust Indicators / Stats */}
+            <div
+              data-hero-fade
+              className="mt-12 grid w-full grid-cols-3 gap-6 border-t border-gray-200 dark:border-white/10 pt-8"
+            >
+              {heroData.stats.map((stat) => (
+                <div key={stat.id}>
+                  <p className="text-3xl font-medium tracking-tight text-foreground">
+                    <Counter value={stat.value} suffix={stat.suffix} />
+                  </p>
+                  <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Image Container (Perfected Size & Balance) */}
+          <div
+            data-hero-mockup
+            className="relative flex justify-center lg:justify-end w-full"
+          >
+            {/* Width badha di hai aur thoda scale de diya hai taaki image prominent lage */}
+            <div className="relative w-full max-w-xl lg:max-w-2xl aspect-square flex items-center justify-center">
+              <Image
+                src="/images/two.png"
+                alt="Platform Illustration"
+                fill
+                priority
+                className="object-contain drop-shadow-2xl scale-110"
+              />
+            </div>
+            
+            {/* Subtle Semantic Glow */}
+            <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+              <div className="h-80 w-80 rounded-full bg-blue-500/10 blur-[140px]" />
+            </div>
+          </div>
+
+        </div>
+        
+        {/* Secondary Dashboard Mockup Reveal (Clean Premium Wrapper) */}
+        <div data-hero-mockup className="relative mt-16 md:mt-24 w-full rounded-[2rem] bg-gray-50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/10 shadow-2xl p-4 sm:p-8 overflow-hidden">
+          {/* Refined subtle glow */}
+          <div className="absolute -inset-x-5 -top-5 -z-10 h-40 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 blur-3xl" />
+
+          <DashboardMockup
+            kind="reports"
+            accent="blue"
+            className="animate-float w-full h-auto rounded-xl shadow-lg border border-gray-200 dark:border-white/10"
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}

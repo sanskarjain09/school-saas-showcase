@@ -1,0 +1,167 @@
+import type { ProductShowcaseItem } from "@/types";
+import { ROUTES } from "@/lib/constants";
+
+export const productShowcaseData: ProductShowcaseItem[] = [
+  {
+    id: "product-students",
+    eyebrow: "Student Management",
+    title: "Every student record, in one place.",
+    description:
+      "From admission to graduation, track profiles, documents, promotions and transfers without a single paper file.",
+    mockup: "students",
+    accent: "blue",
+    capabilities: [
+      { id: "c1", text: "Online admissions & enrollment" },
+      { id: "c2", text: "Digital student profiles & documents" },
+      { id: "c3", text: "Class & section allocation" },
+      { id: "c4", text: "Promotion & transfer certificates" },
+      { id: "c5", text: "Parent & guardian linking" },
+      { id: "c6", text: "ID cards generated automatically" },
+    ],
+    cta: { label: "Explore Student Management", href: ROUTES.demo },
+  },
+  {
+    id: "product-academics",
+    eyebrow: "Academics",
+    title: "Timetables and lesson plans that run themselves.",
+    description:
+      "Allocate subjects and teachers, publish timetables, and let staff log homework and classwork from the app.",
+    mockup: "academics",
+    accent: "purple",
+    capabilities: [
+      { id: "c1", text: "Conflict-free timetable builder" },
+      { id: "c2", text: "Lesson planning & study material" },
+      { id: "c3", text: "Homework & classwork tracking" },
+      { id: "c4", text: "QR & biometric attendance" },
+      { id: "c5", text: "Subject & teacher allocation" },
+      { id: "c6", text: "Academic session management" },
+    ],
+    cta: { label: "Explore Academics", href: ROUTES.demo },
+  },
+  {
+    id: "product-exams",
+    eyebrow: "Examination",
+    title: "From admit cards to report cards, automated.",
+    description:
+      "Run offline or online exams, enter marks once, and let CampusHub calculate grades and publish results instantly.",
+    mockup: "exams",
+    accent: "cyan",
+    capabilities: [
+      { id: "c1", text: "Online & offline exam modes" },
+      { id: "c2", text: "Auto-generated admit cards" },
+      { id: "c3", text: "Grade & GPA computation" },
+      { id: "c4", text: "Digital report cards" },
+      { id: "c5", text: "Assessment analytics" },
+      { id: "c6", text: "Continuous evaluation support" },
+    ],
+    cta: { label: "Explore Examination", href: ROUTES.demo },
+  },
+  {
+    id: "product-finance",
+    eyebrow: "Finance",
+    title: "Fee collection and payroll without the spreadsheets.",
+    description:
+      "Define fee structures, collect online or offline, and keep a full double-entry ledger for your institution.",
+    mockup: "finance",
+    accent: "blue",
+    capabilities: [
+      { id: "c1", text: "Flexible fee structures & discounts" },
+      { id: "c2", text: "Online payments & receipts" },
+      { id: "c3", text: "Scholarships & due reminders" },
+      { id: "c4", text: "Staff payroll processing" },
+      { id: "c5", text: "Double-entry accounting" },
+      { id: "c6", text: "Income & expense reports" },
+    ],
+    cta: { label: "Explore Finance", href: ROUTES.demo },
+  },
+  // {
+  //   id: "product-communication",
+  //   eyebrow: "Communication",
+  //   title: "Reach every parent, on the channel they check.",
+  //   description:
+  //     "Send notices by SMS, email, WhatsApp or push notification, and run parent-teacher meetings and live classes.",
+  //   mockup: "communication",
+  //   accent: "purple",
+  //   capabilities: [
+  //     { id: "c1", text: "Notice board & circulars" },
+  //     { id: "c2", text: "SMS, email & WhatsApp alerts" },
+  //     { id: "c3", text: "Push notifications" },
+  //     { id: "c4", text: "Parent-teacher meeting scheduling" },
+  //     { id: "c5", text: "Live class integration" },
+  //     { id: "c6", text: "Delivery & read tracking" },
+  //   ],
+  //   cta: { label: "Explore Communication", href: ROUTES.demo },
+  // },
+  // {
+  //   id: "product-transport",
+  //   eyebrow: "Transport",
+  //   title: "Know exactly where every bus is.",
+  //   description:
+  //     "Plan routes, assign drivers, and give parents live tracking with automated pickup and drop notifications.",
+  //   mockup: "transport",
+  //   accent: "cyan",
+  //   capabilities: [
+  //     { id: "c1", text: "Route & vehicle management" },
+  //     { id: "c2", text: "Live GPS tracking" },
+  //     { id: "c3", text: "Driver mobile app" },
+  //     { id: "c4", text: "Pickup & drop alerts" },
+  //     { id: "c5", text: "Vehicle maintenance logs" },
+  //     { id: "c6", text: "Fee-linked route billing" },
+  //   ],
+  //   cta: { label: "Explore Transport", href: ROUTES.demo },
+  // },
+  // {
+  //   id: "product-hr",
+  //   eyebrow: "Human Resources",
+  //   title: "Staff, attendance and payroll, aligned.",
+  //   description:
+  //     "Manage recruitment, leave, performance and payroll for teachers and staff in a single connected module.",
+  //   mockup: "hr",
+  //   accent: "blue",
+  //   capabilities: [
+  //     { id: "c1", text: "Staff attendance & leave" },
+  //     { id: "c2", text: "Automated payroll runs" },
+  //     { id: "c3", text: "Performance reviews" },
+  //     { id: "c4", text: "Recruitment pipeline" },
+  //     { id: "c5", text: "Promotions & increments" },
+  //     { id: "c6", text: "Staff self-service portal" },
+  //   ],
+  //   cta: { label: "Explore HR", href: ROUTES.demo },
+  // },
+  // {
+  //   id: "product-mobile",
+  //   eyebrow: "Mobile Apps",
+  //   title: "Your school, in every pocket.",
+  //   description:
+  //     "Dedicated apps for students, parents, teachers and drivers keep everyone connected to the same live data.",
+  //   mockup: "mobile",
+  //   accent: "purple",
+  //   capabilities: [
+  //     { id: "c1", text: "Student & parent apps" },
+  //     { id: "c2", text: "Teacher app for attendance & grades" },
+  //     { id: "c3", text: "Driver app with live routes" },
+  //     { id: "c4", text: "Push notifications" },
+  //     { id: "c5", text: "Offline-friendly sync" },
+  //     { id: "c6", text: "Biometric login support" },
+  //   ],
+  //   cta: { label: "Explore Mobile Apps", href: ROUTES.demo },
+  // },
+  // {
+  //   id: "product-ai",
+  //   eyebrow: "AI Assistant",
+  //   title: "Ask your school data a question. Get an answer.",
+  //   description:
+  //     "CampusHub's AI assistant searches records, summarizes academic insights, and answers staff questions in plain language.",
+  //   mockup: "ai",
+  //   accent: "cyan",
+  //   capabilities: [
+  //     { id: "c1", text: "AI chat assistant for staff" },
+  //     { id: "c2", text: "Natural-language data search" },
+  //     { id: "c3", text: "Academic insight summaries" },
+  //     { id: "c4", text: "Automated report drafting" },
+  //     { id: "c5", text: "Anomaly & risk flagging" },
+  //     { id: "c6", text: "Available across web & mobile" },
+  //   ],
+  //   cta: { label: "Explore AI Assistant", href: ROUTES.demo },
+  // },
+];
