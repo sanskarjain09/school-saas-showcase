@@ -342,7 +342,7 @@ export default function PrivacyPolicyPage() {
 
             {/* 23. Contact Us */}
             <FadeUp>
-              <div className="space-y-4 p-8 bg-gray-50/80 dark:bg-white/5 rounded-3xl border border-gray-100 dark:border-white/10">
+              <div className="space-y-4  bg-gray-50/80 dark:bg-white/5 rounded-3xl border border-gray-100 dark:border-white/10">
                 <h2 className="text-2xl font-semibold text-foreground tracking-tight">23. Contact Us</h2>
                 <p>For questions or concerns regarding this Privacy Policy, please contact:</p>
                 <div className="text-foreground font-medium space-y-1 pt-2">

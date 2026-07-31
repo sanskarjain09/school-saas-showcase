@@ -75,8 +75,8 @@ export interface HeroData {
 export interface TrustedSchool {
   id: string;
   name: string;
+  img: string;
 }
-
 // ==========================================
 // FEATURES & SHOWCASE
 // ==========================================

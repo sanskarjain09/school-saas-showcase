@@ -132,7 +132,7 @@ export default function IndustriesPage() {
                 </Container>
             </Section>
 
-{/* 2. EDUCATIONAL INSTITUTIONS GRID */}
+
 
 {/* 2. EDUCATIONAL INSTITUTIONS GRID */}
 <Section className="py-16 lg:py-24 bg-white dark:bg-background border-t border-gray-100 dark:border-white/5">
