@@ -7,7 +7,7 @@ import { ROUTES } from "@/lib/constants";
 
 export function CTA() {
   return (
-    <Section className="lg:py-8 py-8 md:py-10 overflow-hidden">
+    <Section className="py-section-sm lg:py-section-lg overflow-hidden">
       <Container>
         <FadeUp>
           <div className="relative overflow-hidden rounded-3xl border border-border bg-surface px-8 py-10 text-center sm:px-16">

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export function Pricing() {
   return (
-    <Section id="pricing" className="bg-surface/20">
+    <Section id="pricing" className="bg-surface/20 py-section-sm lg:py-section-lg">
       <Container>
         <Heading
           eyebrow="Pricing"
@@ -22,7 +22,7 @@ export function Pricing() {
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {pricingPlans.map((plan, idx) => (
-            <FadeUp key={plan.id} delay={idx * 0.06}>
+            <FadeUp key={plan.id} delay={idx *0.02}>
               <div
                 className={cn(
                   "flex h-full flex-col rounded-2xl border p-8",

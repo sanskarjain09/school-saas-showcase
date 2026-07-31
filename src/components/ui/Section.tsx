@@ -23,8 +23,8 @@ export function Section({
       className={cn(
         // 1. Relative positioning for absolute background assets (blobs, grids, etc.)
         "relative",
-        // 2. Strict Mobile-First Vertical Rhythm (64px -> 96px -> 128px)
-        "py-16 md:py-24 lg:py-32",
+        // 2. Strict Mobile-First Vertical Rhythm (96px -> 120px)
+        "py-section-sm lg:py-section-lg",
         className
       )}
       {...props}

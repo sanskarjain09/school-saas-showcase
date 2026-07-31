@@ -12,7 +12,7 @@ import { Pricing } from "@/components/home/Pricing";
 import { AllFeatures } from "@/components/home/AllFeatures";
 import { FAQ } from "@/components/home/FAQ";
 import { CTA } from "@/components/home/CTA";
-import { WhiteLabel } from "@/components/home/White-lable";
+import { WhiteLabel } from "@/components/home/White-label";
 import { Contact } from "@/components/home/Contact";
 import { PlatformOverview } from "@/components/home/PlatformOverview";
 

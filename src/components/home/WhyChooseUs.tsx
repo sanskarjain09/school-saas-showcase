@@ -9,7 +9,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 export function WhyChooseUs() {
   return (
     // Added a subtle background tint to differentiate it from the Platform Overview section
-    <Section id="why-choose-us" className="bg-surface/30 py-6 lg:py-10 md:py-8">
+    <Section id="why-choose-us" className="bg-surface/30 py-section-sm lg:py-section-lg">
       <Container>
         {/* 1. Centered Header Layout for perfectly balanced UI */}
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -30,7 +30,7 @@ export function WhyChooseUs() {
         {/* 2. Upgraded Responsive Grid: 1 col (mobile) -> 2 col (tablet) -> 4 col (desktop) */}
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2  lg:grid-cols-4">
           {whyChooseUsData.map((item, idx) => (
-            <FadeUp key={item.id} delay={idx * 0.05}>
+            <FadeUp key={item.id} delay={idx *0.02}>
               <FeatureCard
                 icon={item.icon}
                 title={item.title}

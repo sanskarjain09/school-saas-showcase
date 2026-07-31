@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 import { testimonials } from "@/data/testimonials";
@@ -58,7 +57,7 @@ export function Testimonials() {
   }, [emblaApi]);
 
   return (
-    <Section id="testimonials" className="bg-surface/20 py-16 lg:py-10 md:py-24 overflow-hidden relative">
+    <Section id="testimonials" className="bg-surface/20 py-section-sm lg:py-section-lg overflow-hidden relative">
       <Container className="relative">
         <Heading
           eyebrow="Loved by school leaders"
@@ -71,14 +70,14 @@ export function Testimonials() {
           {/* Navigation Arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute -left-5 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white/90 shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-[#D31027] hover:text-[#D31027] lg:flex"
+            className="absolute -left-5 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-accent-purple hover:text-accent-purple lg:flex"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
 
           <button
             onClick={scrollNext}
-            className="absolute -right-5 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white/90 shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-[#D31027] hover:text-[#D31027] lg:flex"
+            className="absolute -right-5 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-accent-purple hover:text-accent-purple lg:flex"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -111,55 +110,46 @@ export function Testimonials() {
                       key={testimonial.id || index}
                       className="min-w-0 flex-[0_0_100%] px-4 sm:flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
                     >
-                      <FadeUp delay={(index % 3) * 0.05}>
-                        <motion.div
-                          animate={{
-                            scale,
-                            opacity,
-                            rotateY: rotate,
-                            y: distance === 0 ? -12 : 0,
-                            zIndex, // Applies the Z-Index fix smoothly
-                          }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 220,
-                            damping: 22,
-                          }}
+                      <FadeUp delay={(index % 3) *0.02}>
+                        <div
                           style={{
+                            transform: `scale(${scale}) rotateY(${rotate}deg) translateY(${distance === 0 ? -12 : 0}px)`,
+                            opacity,
+                            zIndex, // Applies the Z-Index fix smoothly
                             transformStyle: "preserve-3d",
                             perspective: 1200,
                             position: "relative", 
                           }}
-                          className="h-full pt-6" // Space for the bubble
+                          className="h-full pt-6 transition-all duration-500 ease-out will-change-transform" // Space for the bubble
                         >
                           {/* --- Custom Testimonial Card Design --- */}
-                          <div className="relative bg-white rounded-xl shadow-xl p-8 pt-14 text-center max-w-sm w-full mx-auto border border-gray-100 h-full flex flex-col justify-between transition-shadow">
+                          <div className="relative bg-card rounded-card shadow-card-lg p-8 pt-14 text-center max-w-sm w-full mx-auto border border-border h-full flex flex-col justify-between transition-shadow">
                             
                             {/* Overlapping Initials Container (Red Bubble) */}
-                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-[#D31027] rounded-full flex items-center justify-center border-[6px] border-white shadow-sm text-white text-3xl font-bold tracking-wider uppercase overflow-hidden">
+                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-accent-purple rounded-full flex items-center justify-center border-[6px] border-surface shadow-sm text-white text-3xl font-bold tracking-wider uppercase overflow-hidden">
                               {testimonial.initials}
                             </div>
 
                             <div className="flex flex-col h-full justify-between flex-grow">
                               <div>
                                 {/* Small decorative quote icon */}
-                                <Quote className="w-8 h-8 mx-auto text-gray-200 mb-4" fill="currentColor" />
+                                <Quote className="w-8 h-8 mx-auto text-border mb-4" fill="currentColor" />
                                 
                                 {/* Testimonial Quote */}
-                                <p className="text-gray-600 text-base italic leading-relaxed mb-8">
+                                <p className="text-muted text-base italic leading-relaxed mb-8">
                                   &ldquo;{testimonial.quote}&rdquo;
                                 </p>
                               </div>
 
                               {/* Author Details */}
-                              <div className="mt-auto border-t border-gray-100 pt-6">
-                                <h4 className="text-lg font-bold text-gray-900">
+                              <div className="mt-auto border-t border-border pt-6">
+                                <h4 className="text-lg font-bold text-foreground">
                                   {testimonial.name}
                                 </h4>
-                                <p className="text-sm font-medium text-[#D31027] mt-1">
+                                <p className="text-sm font-medium text-accent-purple mt-1">
                                   {testimonial.role}
                                 </p>
-                                <p className="text-xs text-gray-400 mt-1">
+                                <p className="text-xs text-muted mt-1">
                                   {testimonial.school}
                                 </p>
                               </div>
@@ -167,7 +157,7 @@ export function Testimonials() {
 
                           </div>
                           {/* ------------------------------------- */}
-                        </motion.div>
+                        </div>
                       </FadeUp>
                     </div>
                   );
@@ -184,8 +174,8 @@ export function Testimonials() {
                 onClick={() => scrollTo(index)}
                 className={`h-2 rounded-full transition-all duration-500 ${
                   index === selectedIndex
-                    ? "w-10 bg-[#D31027]" // Red active dot
-                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                    ? "w-10 bg-accent-purple" // Red active dot
+                    : "w-2 bg-border hover:bg-muted"
                 }`}
               />
             ))}

@@ -11,10 +11,10 @@ export function TrustedSchools() {
   const displayedSchools = trustedSchools.slice(0, 6);
 
   return (
-    <Section className="py-16 lg:py-24 bg-white dark:bg-background border-t border-gray-100 dark:border-white/5">
+    <Section className="py-section-sm lg:py-section-lg bg-surface border-t border-border">
       <Container>
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold tracking-[0.2em] text-[#1A73E8] uppercase mb-3">
+          <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-3">
             Educational Institutions
           </p>
           <Heading 
@@ -26,9 +26,9 @@ export function TrustedSchools() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {displayedSchools.map((school, idx) => (
-            <FadeUp key={school.id || school.name} delay={idx * 0.03}>
+            <FadeUp key={school.id || school.name} delay={idx *0.02}>
               {/* Image Card */}
-              <div className="group relative aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-3xl bg-gray-50/80 dark:bg-white/[0.02] border border-gray-100 dark:border-white/10 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-gray-200 dark:hover:border-white/20 shadow-sm flex items-center justify-center">
+              <div className="group relative aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-3xl bg-card border border-border p-8 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-card-sm hover:shadow-card-md flex items-center justify-center">
                 <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-110">
                   <Image
                     src={school.img}
@@ -43,14 +43,14 @@ export function TrustedSchools() {
           ))}
 
           {/* 7th Card: View All Industries We Serve */}
-          <FadeUp delay={6 * 0.03}>
+          <FadeUp delay={0.02*0.02}>
             <Link href="/industries" className="block h-full">
-              <div className="group relative aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-3xl bg-[#1A73E8]/5 dark:bg-[#1A73E8]/10 border border-[#1A73E8]/20 p-6 transition-all duration-300 hover:scale-[1.02] hover:bg-[#1A73E8]/10 dark:hover:bg-[#1A73E8]/20 flex flex-col items-center justify-center text-center h-full shadow-sm">
-                <span className="text-sm font-semibold tracking-tight text-[#1A73E8] mb-2 flex items-center gap-2">
+              <div className="group relative aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-3xl bg-accent/5 border border-accent/20 p-6 transition-all duration-300 hover:scale-[1.02] hover:bg-accent/10 flex flex-col items-center justify-center text-center h-full shadow-card-sm hover:shadow-card-md">
+                <span className="text-sm font-semibold tracking-tight text-accent mb-2 flex items-center gap-2">
                   View All Industries We Serve
                   <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </span>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted">
                   Explore our comprehensive solutions for all sectors
                 </p>
               </div>

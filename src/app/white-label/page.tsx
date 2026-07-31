@@ -1,4 +1,3 @@
-"use client";
 
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -69,15 +68,17 @@ export default function WhiteLabelPage() {
   return (
     <Section
       id="white-label"
-      className="overflow-hidden bg-surface/25 py-16 lg:py-20" // Cleaned up padding classes
+      className="pt-32 py-section-sm lg:py-section-lg relative overflow-hidden bg-background"
     >
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-1" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-1" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-2" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-3" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-grid" />
 
       <Container>
-        <Badge className="mb-4">White Label</Badge>
+        <p className="mb-4 text-center text-sm font-semibold tracking-wider text-accent uppercase">
+          White Label
+        </p>
         <Heading
           // eyebrow="White Label"
           title="Launch your own branded School ERP Platform."
@@ -89,9 +90,9 @@ export default function WhiteLabelPage() {
             const Icon = item.icon;
 
             return (
-              <FadeUp key={item.title} delay={index * 0.05}>
+              <FadeUp key={item.title} delay={index *0.02}>
                 <div className="group rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-hover">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-cyan/10 text-accent-cyan">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
                     <Icon className="h-6 w-6" />
                   </div>
 
@@ -108,11 +109,11 @@ export default function WhiteLabelPage() {
           })}
         </div>
 
-        <FadeUp delay={0.35}>
+        <FadeUp delay={0.02}>
           <div className="mt-16 rounded-3xl border border-border bg-gradient-to-r from-surface to-background p-8 lg:p-12">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-accent-cyan">
+                <p className="text-sm font-semibold uppercase tracking-widest text-accent">
                   Included with Every White Label Setup
                 </p>
 
@@ -126,7 +127,7 @@ export default function WhiteLabelPage() {
               <ul className="grid grid-cols-2 gap-4 text-sm text-muted">
                 {includedFeatures.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-accent-cyan" />
+                    <Check className="h-4 w-4 text-accent" />
                     <span>{feature}</span>
                   </li>
                 ))}

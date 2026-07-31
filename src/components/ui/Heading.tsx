@@ -13,7 +13,7 @@ export function Heading({
   eyebrow, 
   title, 
   description, 
-  align = "left", 
+  align = "center", 
   as: As = "h2", // Defaults to h2 for regular sections
   className 
 }: HeadingProps) {

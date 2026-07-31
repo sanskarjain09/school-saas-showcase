@@ -1,4 +1,3 @@
-"use client";
 
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -68,56 +67,57 @@ const benefits = [
 
 export default function FeaturesPage() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-background">
       {/* 1. HERO SECTION */}
-      <Section className="py-16 lg:py-20 md:py-24 relative overflow-hidden">
+      <Section className="py-section-sm lg:py-section-lg relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-1" />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-2" />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-3" />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-grid" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60vw] max-w-[800px] aspect-square bg-accent/10 blur-[120px] rounded-full pointer-events-none -z-10" />
         <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20 py-16 lg:py-24">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
             {/* Left Side: Content & CTA */}
             <FadeUp>
               <div className="flex flex-col items-start max-w-xl">
                 {/* Clean Eyebrow (Replacing the solid Badge for a more minimalist look) */}
-                <p className="mb-4 text-sm font-semibold tracking-wider text-gray-500 uppercase">
+                <p className="mb-4 text-sm font-semibold tracking-wider text-muted uppercase">
                   Platform Features
                 </p>
 
                 {/* Google-Style Large Heading */}
-                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight text-foreground leading-[1.15]">
+                <h1 className="text-4xl md:text-5xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
                   Complete Ecosystem. Seamlessly Synced.
                 </h1>
 
                 {/* Simple Description */}
-                <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                <p className="mt-6 text-lg text-muted leading-relaxed">
                   JiNANAM Campus: One intelligent platform to run your entire institution seamlessly.
                 </p>
 
                 {/* Pill-shaped Buttons */}
                 <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                  <a
+                  <Button
                     href="/book-demo"
-                    className="w-full sm:w-auto rounded-full bg-[#1A73E8] px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-blue-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-center"
+                    className="w-full sm:w-auto rounded-full text-center"
                   >
                     Book a Demo
-                  </a>
+                  </Button>
 
-                  <a
+                  <Button
                     href="/white-label"
-                    className="w-full sm:w-auto rounded-full bg-gray-100 dark:bg-white/5 px-8 py-3.5 text-base font-medium text-foreground transition-all hover:bg-gray-200 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 text-center"
+                    variant="secondary"
+                    className="w-full sm:w-auto rounded-full text-center"
                   >
                     Explore White Label
-                  </a>
+                  </Button>
                 </div>
               </div>
             </FadeUp>
 
             {/* Right Side: Clean Visual */}
-            <FadeUp delay={0.2}>
+            <FadeUp delay={0.02}>
               {/* 
             Image container ko responsive rakha hai. 
             'fill' property use ki hai taaki width/height na deni pade.
@@ -138,11 +138,11 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 2. COMPLETE CAMPUS ECOSYSTEM */}
-      <Section className="py-12 lg:py-20 bg-white">
+      <Section className="py-section-sm lg:py-section-lg bg-surface">
         <Container>
           <div className="text-center mb-16">
             <Heading title="Complete Campus Ecosystem" align="center" />
-            <p className="text-slate-500 mt-3 text-lg">One platform. Every module. Seamlessly connected.</p>
+            <p className="text-muted mt-3 text-lg">One platform. Every module. Seamlessly connected.</p>
           </div>
 
           <FadeUp>
@@ -160,21 +160,21 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 3. STUDENT LIFECYCLE */}
-      <Section className="py-12 lg:py-16 bg-slate-50/50 border-y border-slate-200">
+      <Section className="py-section-sm lg:py-section-lg bg-surface/50 border-y border-border">
         <Container>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/4">
-              <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider mb-2">Student Lifecycle</h3>
-              <p className="text-sm text-slate-500">From admission to alumni—every step is connected.</p>
+              <h3 className="text-lg font-bold text-foreground uppercase tracking-wider mb-2">Student Lifecycle</h3>
+              <p className="text-sm text-muted">From admission to alumni—every step is connected.</p>
             </div>
 
             <div className="lg:w-3/4 flex w-full justify-between items-center overflow-x-auto pb-4 gap-4 no-scrollbar">
               {studentLifecycle.map((item, i) => (
                 <div key={item} className="flex flex-col items-center gap-3 min-w-[90px]">
-                  <div className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-accent shadow-sm relative z-10">
                     <span className="font-bold text-sm">{i + 1}</span>
                   </div>
-                  <span className="text-[11px] font-semibold text-slate-600 text-center uppercase tracking-wide">{item}</span>
+                  <span className="text-[11px] font-semibold text-muted text-center uppercase tracking-wide">{item}</span>
                 </div>
               ))}
             </div>
@@ -183,24 +183,24 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 4. FEATURE SHOWCASE GRID */}
-      <Section className="py-12 lg:py-24 bg-white">
+      <Section className="py-section-sm lg:py-section-lg bg-surface">
         <Container>
-          <div className="mb-16">
-            <Heading title="Feature Showcase" align="left" />
-            <p className="text-slate-500 mt-3 text-lg">Powerful features designed to simplify everyday campus operations.</p>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <Heading title="Feature Showcase" />
+            <p className="text-muted mt-3 text-lg">Powerful features designed to simplify everyday campus operations.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featureShowcase.map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <FadeUp key={feature.title} delay={idx * 0.05}>
-                  <div className="group h-full p-8 bg-white border border-slate-200 rounded-3xl hover:border-blue-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <FadeUp key={feature.title} delay={idx *0.02}>
+                  <div className="group h-full p-8 bg-surface border border-border rounded-3xl hover:border-accent hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h4>
-                    <p className="text-sm text-slate-600 leading-7">{feature.desc}</p>
+                    <h4 className="text-xl font-bold text-foreground mb-3">{feature.title}</h4>
+                    <p className="text-sm text-muted leading-7">{feature.desc}</p>
                   </div>
                 </FadeUp>
               );
@@ -210,14 +210,14 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 5. DAILY CAMPUS EXPERIENCE */}
-      <Section className="py-12 lg:py-20 bg-slate-50/50">
+      <Section className="py-section-sm lg:py-section-lg bg-surface/50">
         <Container>
-          <div className="lg:w-1/3 mb-10">
-            <h3 className="text-xl font-bold text-slate-900 uppercase tracking-widest mb-2">Daily Campus Experience</h3>
-            <p className="text-sm text-slate-500 leading-relaxed">A connected day on campus. Everything happens automatically inside JiNANAM Campus.</p>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <Heading title="Daily Campus Experience" />
+            <p className="text-muted mt-3 text-lg">A connected day on campus. Everything happens automatically inside JiNANAM Campus.</p>
           </div>
           <FadeUp>
-            <div className="w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex items-center justify-center">
+            <div className="w-full bg-surface rounded-3xl p-8 border border-border shadow-sm flex items-center justify-center">
               <Image
                 src="/images/daily-campus.png"
                 alt="Daily Campus Flow"
@@ -232,18 +232,18 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 6. ROLE-BASED EXPERIENCE */}
-      <Section className="py-12 lg:py-24 bg-white">
+      <Section className="py-section-sm lg:py-section-lg bg-surface">
         <Container>
-          <div className="mb-16">
-            <Heading title="Role-Based Experience" align="left" />
-            <p className="text-slate-500 mt-3 text-lg">The right experience for every role in your institution.</p>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <Heading title="Role-Based Experience" />
+            <p className="text-muted mt-3 text-lg">The right experience for every role in your institution.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {roles.map((role, idx) => (
-              <FadeUp key={role.title} delay={idx * 0.1}>
-                <div className="group h-full bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:shadow-md transition-all duration-300">
-                  <div className="aspect-[4/3] relative overflow-hidden bg-slate-200">
+              <FadeUp key={role.title} delay={idx *0.02}>
+                <div className="group h-full bg-surface rounded-3xl overflow-hidden border border-border hover:shadow-md transition-all duration-300">
+                  <div className="aspect-[4/3] relative overflow-hidden bg-border">
                     <Image
                       src={role.img}
                       alt={role.title}
@@ -252,8 +252,8 @@ export default function FeaturesPage() {
                     />
                   </div>
                   <div className="p-6">
-                    <h4 className="font-bold text-slate-900 text-lg mb-2 leading-tight">{role.title}</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">{role.desc}</p>
+                    <h4 className="font-bold text-foreground text-lg mb-2 leading-tight">{role.title}</h4>
+                    <p className="text-xs text-muted leading-relaxed">{role.desc}</p>
                   </div>
                 </div>
               </FadeUp>
@@ -263,7 +263,7 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 7. WHY INSTITUTIONS LOVE US */}
-      <Section className="py-12 lg:py-20 bg-slate-50/50 border-y border-slate-200">
+      <Section className="py-section-sm lg:py-section-lg bg-surface/50 border-y border-border">
         <Container>
           <div className="mb-16 text-center max-w-2xl mx-auto">
             <Heading title="Why Institutions Love JiNANAM Campus" align="center" />
@@ -273,13 +273,13 @@ export default function FeaturesPage() {
             {benefits.map((benefit, idx) => {
               const Icon = benefit.icon;
               return (
-                <FadeUp key={benefit.title} delay={idx * 0.05}>
-                  <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-200 h-full hover:-translate-y-1 transition-transform">
-                    <div className="w-12 h-12 mb-4 text-blue-600 bg-blue-50 rounded-xl flex items-center justify-center">
+                <FadeUp key={benefit.title} delay={idx *0.02}>
+                  <div className="flex flex-col items-center text-center p-6 bg-surface rounded-2xl shadow-sm border border-border h-full hover:-translate-y-1 transition-transform">
+                    <div className="w-12 h-12 mb-4 text-accent bg-accent/10 rounded-xl flex items-center justify-center">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h4 className="font-semibold text-slate-900 text-base mb-2">{benefit.title}</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">{benefit.desc}</p>
+                    <h4 className="font-semibold text-foreground text-base mb-2">{benefit.title}</h4>
+                    <p className="text-xs text-muted leading-relaxed">{benefit.desc}</p>
                   </div>
                 </FadeUp>
               );
@@ -289,15 +289,15 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 8. BEAUTIFUL DASHBOARD GALLERY */}
-      <Section className="py-12 lg:py-24 bg-white overflow-hidden">
+      <Section className="py-section-sm lg:py-section-lg bg-surface overflow-hidden">
         <Container>
-          <div className="mb-12">
-            <Heading title="Beautiful Dashboard Gallery" align="left" />
-            <p className="text-slate-500 mt-3 text-lg">Every dashboard is designed for clarity, insight and action.</p>
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <Heading title="Beautiful Dashboard Gallery" />
+            <p className="text-muted mt-3 text-lg">Every dashboard is designed for clarity, insight and action.</p>
           </div>
 
           <FadeUp>
-            <div className="w-full flex justify-center bg-slate-50 p-6 rounded-3xl border border-slate-200">
+            <div className="w-full flex justify-center bg-surface/50 p-6 rounded-3xl border border-border">
               <Image
                 src="/images/dashboard.png"
                 alt="Dashboard Gallery"
@@ -311,21 +311,21 @@ export default function FeaturesPage() {
       </Section>
 
       {/* 9. BOTTOM CTA SECTION */}
-      <Section className="py-12 lg:py-20 bg-white">
+      <Section className="py-section-sm lg:py-section-lg bg-surface">
         <Container>
           <FadeUp>
-            <div className="bg-blue-600 rounded-3xl p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 text-white relative overflow-hidden">
+            <div className="bg-accent rounded-3xl p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
               <div className="relative z-10 max-w-2xl">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">One Platform. Every Department. Perfectly Connected.</h2>
-                <p className="text-blue-100 text-lg leading-relaxed">
+                <p className="text-white/90 text-lg leading-relaxed">
                   JiNANAM Campus brings together every department, every workflow and every user into one beautifully designed digital ecosystem that helps educational institutions operate smarter, communicate better and grow with confidence.
                 </p>
               </div>
 
               <div className="relative z-10 flex gap-4 shrink-0 flex-wrap">
-                <Button href="/book-demo" variant="secondary" className="bg-white text-blue-600 hover:bg-slate-50">Book a Personalized Demo</Button>
+                <Button href="/book-demo" variant="secondary" className="bg-white text-accent hover:bg-surface">Book a Personalized Demo</Button>
                 <Button href="/contact" variant="ghost" className="border border-white/30 text-white hover:bg-white/10">Contact Our Team</Button>
               </div>
             </div>

@@ -51,6 +51,7 @@ const config: Config = {
         "card-lg": "0 20px 40px -8px rgba(0, 0, 0, 0.12)",
         glow: "0 0 40px -10px rgba(37,99,235,0.15)",
         "glow-purple": "0 0 40px -10px rgba(124,58,237,0.15)",
+        "glow-cyan": "0 0 40px -10px rgba(8,145,178,0.15)",
       },
 
       // 5. SPACING SYSTEM (Semantic spacing for world-class rhythm)

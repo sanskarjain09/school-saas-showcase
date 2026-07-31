@@ -13,6 +13,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { DashboardMockup } from "./DashboardMockup";
 import { accentText } from "@/lib/theme";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
 
 export function ProductShowcase() {
   const autoplay = Autoplay({
@@ -59,7 +60,7 @@ export function ProductShowcase() {
   }, [emblaApi]);
 
   return (
-    <Section id="products" className="overflow-hidden py-16 lg:py-24 bg-white dark:bg-background">
+    <Section id="products" className="overflow-hidden py-section-sm lg:py-section-lg bg-background">
       <Container>
         {/* Centered Section Header */}
         <Heading
@@ -76,7 +77,7 @@ export function ProductShowcase() {
           {/* Left Navigation Arrow */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white/90 shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-[#1A73E8] hover:text-[#1A73E8] lg:flex dark:bg-zinc-900 dark:border-white/10 dark:text-white"
+            className="absolute left-0 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-accent hover:text-accent lg:flex"
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -85,7 +86,7 @@ export function ProductShowcase() {
           {/* Right Navigation Arrow */}
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white/90 shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-[#1A73E8] hover:text-[#1A73E8] lg:flex dark:bg-zinc-900 dark:border-white/10 dark:text-white"
+            className="absolute right-0 top-1/2 z-30 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface shadow-md backdrop-blur-xl transition hover:scale-110 hover:border-accent hover:text-accent lg:flex"
             aria-label="Next slide"
           >
             <ChevronRight className="h-5 w-5" />
@@ -117,12 +118,12 @@ export function ProductShowcase() {
                           </p>
 
                           {/* Google-Style Large Heading */}
-                          <h3 className="text-3xl md:text-4xl lg:text-[44px] font-medium tracking-tight text-foreground leading-[1.15]">
+                          <h3 className="text-3xl md:text-4xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
                             {product.title}
                           </h3>
 
                           {/* Description */}
-                          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                          <p className="mt-6 text-lg text-muted leading-relaxed">
                             {product.description}
                           </p>
 
@@ -130,7 +131,7 @@ export function ProductShowcase() {
                           <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                             {product.capabilities.map((cap) => (
                               <li key={cap.id} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                                <span className={cn("mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full", accentText[product.accent])} />
+                                <span className={cn("mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-current", accentText[product.accent])} />
                                 {cap.text}
                               </li>
                             ))}
@@ -138,19 +139,16 @@ export function ProductShowcase() {
 
                           {/* Pill-shaped CTA Action */}
                           <div className="mt-10">
-                            <a 
-                              href={product.cta.href} 
-                              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 px-8 py-3.5 text-base font-medium text-foreground transition-all hover:bg-gray-200 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
-                            >
-                              {product.cta.label} <span aria-hidden="true">&rarr;</span>
-                            </a>
+                            <Button href={product.cta.href} variant="secondary" className="w-full sm:w-auto" showArrow>
+                              {product.cta.label}
+                            </Button>
                           </div>
 
                         </div>
                       </FadeUp>
 
                       {/* Left/Right Mockup Showcase */}
-                      <FadeUp delay={0.1}>
+                      <FadeUp delay={0.02}>
                         <div className="relative flex justify-center w-full">
                           <DashboardMockup kind={product.mockup} accent={product.accent} />
                         </div>
@@ -171,8 +169,8 @@ export function ProductShowcase() {
                 aria-label={`Go to slide ${index + 1}`}
                 className={`h-2 rounded-full transition-all duration-500 ${
                   index === selectedIndex
-                    ? "w-10 bg-[#1A73E8]" // Active Google blue dot
-                    : "w-2 bg-gray-300 hover:bg-gray-400 dark:bg-white/20"
+                    ? "w-10 bg-accent" // Active Google blue dot
+                    : "w-2 bg-border hover:bg-muted"
                 }`}
               />
             ))}

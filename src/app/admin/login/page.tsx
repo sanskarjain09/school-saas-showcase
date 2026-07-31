@@ -78,7 +78,7 @@ export default function AdminLoginPage() {
                 type="email"
                 required
                 placeholder="you@institution.com"
-                className="w-full rounded-xl border border-border bg-background py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-accent"
+                className="w-full rounded-input border border-border bg-background py-3.5 pl-11 pr-4 text-sm outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function AdminLoginPage() {
                 type="password"
                 required
                 placeholder="Password"
-                className="w-full rounded-xl border border-border bg-background py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-accent"
+                className="w-full rounded-input border border-border bg-background py-3.5 pl-11 pr-4 text-sm outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
               />
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-accent text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
+            className="group relative mt-2 flex h-12 w-full items-center justify-center gap-2 rounded-button bg-gradient-blue-purple text-sm font-semibold text-white shadow-glow transition-all duration-300 ease-out will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-glow-purple active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:hover:brightness-100"
           >
             {loading ? (
               <>

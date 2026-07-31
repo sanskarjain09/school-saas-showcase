@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { moduleCategories } from "@/data/modules";
@@ -11,6 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 import { FadeUp } from "@/components/animations/FadeUp";
+import { Button } from "@/components/ui/Button";
 
 export function CoreModules() {
   const autoplay = Autoplay({
@@ -58,7 +58,7 @@ export function CoreModules() {
   }, [emblaApi]);
 
   return (
-    <Section id="modules" className="bg-surface/25 py-16 lg:py-10 md:py-24 overflow-hidden relative">
+    <Section id="modules" className="bg-surface/25 py-section-sm lg:py-section-lg overflow-hidden relative">
       <Container className="relative">
         {/* Centered Heading */}
         <Heading
@@ -73,14 +73,14 @@ export function CoreModules() {
           {/* Navigation Arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute -left-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-background/80 backdrop-blur-xl transition hover:scale-110 hover:border-red-500 hover:text-red-500 lg:flex"
+            className="absolute -left-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface backdrop-blur-xl transition hover:scale-110 hover:border-accent hover:text-accent lg:flex"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
 
           <button
             onClick={scrollNext}
-            className="absolute -right-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-background/80 backdrop-blur-xl transition hover:scale-110 hover:border-red-500 hover:text-red-500 lg:flex"
+            className="absolute -right-5 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface backdrop-blur-xl transition hover:scale-110 hover:border-accent hover:text-accent lg:flex"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -108,59 +108,38 @@ export function CoreModules() {
                       key={module.id || index}
                       className="min-w-0 flex-[0_0_100%] px-4 sm:flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
                     >
-                      <FadeUp delay={(index % 3) * 0.05}>
-                        <motion.div
-                          animate={{
-                            scale,
-                            opacity,
-                            rotateY: rotate,
-                            y: distance === 0 ? -12 : 0,
-                          }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 220,
-                            damping: 22,
-                          }}
+                      <FadeUp delay={(index % 3) *0.02}>
+                        <div
                           style={{
+                            transform: `scale(${scale}) rotateY(${rotate}deg) translateY(${distance === 0 ? -12 : 0}px)`,
+                            opacity,
                             transformStyle: "preserve-3d",
                             perspective: 1200,
                           }}
-                          className="h-full pt-6" // extra padding for the overlapping icon
+                          className="h-full pt-6 transition-all duration-500 ease-out will-change-transform" // extra padding for the overlapping icon
                         >
                           {/* --- Your Custom FeatureCard Design --- */}
-                          <div className="relative bg-white rounded-xl shadow-lg p-8 pt-16 text-center max-w-sm w-full mx-auto border border-gray-100 h-full flex flex-col justify-between transition-shadow hover:shadow-2xl">
+                          <div className="relative bg-card rounded-card shadow-card-sm hover:shadow-card-md p-8 pt-16 text-center max-w-sm w-full mx-auto border border-border h-full flex flex-col items-center transition-shadow">
 
                             {/* Overlapping Icon Container */}
-                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-[#D31027] rounded-full flex items-center justify-center border-8 border-gray-100 shadow-sm text-white">
+                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-accent rounded-full flex items-center justify-center border-8 border-surface shadow-sm text-white">
                               {Icon && <Icon className="w-8 h-8" />}
                             </div>
 
-                            <div>
+                            <div className="flex-1 flex flex-col justify-center">
                               {/* Title */}
-                              <h3 className="text-lg font-bold tracking-widest text-gray-800 uppercase mb-4">
+                              <h3 className="text-lg font-bold tracking-widest text-foreground uppercase mb-4">
                                 {module.title}
                               </h3>
 
                               {/* Description */}
-                              <p className="text-gray-600 text-base leading-relaxed mb-8">
+                              <p className="text-muted text-base leading-relaxed mb-8">
                                 {module.description}
                               </p>
                             </div>
-
-                            {/* Outline Action Button */}
-                            <div className="mt-auto">
-                              <button className="w-full border-2 border-gray-800 text-gray-800 font-bold text-lg px-8 py-2.5 rounded hover:bg-gray-800 hover:text-white transition-all duration-300">
-
-                                <a
-                                  href="/features"
-                                >
-                                  View Details
-                                </a>
-                              </button>
-                            </div>
                           </div>
                           {/* ------------------------------------- */}
-                        </motion.div>
+                        </div>
                       </FadeUp>
                     </div>
                   );
@@ -176,8 +155,8 @@ export function CoreModules() {
                 key={index}
                 onClick={() => scrollTo(index)}
                 className={`h-2 rounded-full transition-all duration-500 ${index === selectedIndex
-                    ? "w-10 bg-[#D31027]" // Matched dot color to your card's icon theme
-                    : "w-2 bg-white/20 hover:bg-white/40"
+                    ? "w-10 bg-accent" // Matched dot color to your card's icon theme
+                    : "w-2 bg-border hover:bg-muted"
                   }`}
               />
             ))}

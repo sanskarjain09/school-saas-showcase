@@ -1,4 +1,3 @@
-"use client";
 
 import { allFeatureCategories } from "@/data/allFeatures";
 import { Container } from "@/components/ui/Container";
@@ -12,7 +11,7 @@ const TOTAL_FEATURE_COUNT = allFeatureCategories.reduce((sum, cat) => sum + cat.
 
 export function AllFeatures() {
   return (
-    <Section id="all-features" className="py-10 lg:py-8 md:py-24 overflow-hidden">
+    <Section id="all-features" className="py-section-sm lg:py-section-lg overflow-hidden">
       <Container>
         {/* Centered Heading with max-w constraint */}
         <Heading
@@ -26,7 +25,7 @@ export function AllFeatures() {
         {/* Feature Categories Grid: First 6 items */}
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {allFeatureCategories.slice(0, 6).map((category, index) => (
-            <FadeUp key={category.id} delay={index * 0.05}>
+            <FadeUp key={category.id} delay={index *0.02}>
               <FeatureCard
                 icon={category.icon}
                 title={category.title}
@@ -37,7 +36,7 @@ export function AllFeatures() {
         </div>
 
         {/* Action CTA */}
-        <FadeUp delay={0.2}>
+        <FadeUp delay={0.02}>
           <div className="mt-4 flex justify-center">
             <Button
               href="/features"
@@ -51,7 +50,7 @@ export function AllFeatures() {
         </FadeUp>
 
         {/* Optional Customer Feedback Footer Note */}
-        {/* <FadeUp delay={0.3}>
+        {/* <FadeUp delay={0.02}>
           <p className="mt-8 text-center text-sm text-muted">
             Don&apos;t see a feature you need? We ship new modules every quarter based on customer feedback.
           </p>

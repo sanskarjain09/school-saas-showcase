@@ -19,7 +19,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-4 py-24">
+    <section className="relative flex min-h-[calc(100vh-100px)] items-center justify-center overflow-hidden py-section-sm lg:py-section-lg">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-grid" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-3" />
 

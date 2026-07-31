@@ -6,7 +6,7 @@ import { DashboardMockup } from "./DashboardMockup";
 
 export function DashboardPreview() {
   return (
-    <Section id="dashboard-preview" className="bg-surface/20 py-10 lg:py-10 md:py-24 overflow-hidden">
+    <Section id="dashboard-preview" className="bg-surface/20 py-section-sm lg:py-section-lg overflow-hidden">
       <Container>
         {/* Centered Heading with max-w constraint */}
         <Heading
@@ -24,31 +24,31 @@ export function DashboardPreview() {
             <DashboardMockup 
               kind="reports" 
               accent="blue" 
-              className="shadow-[0_30px_80px_-20px_rgba(59,130,246,0.35)]" 
+              className="shadow-glow" 
             />
           </FadeUp>
 
           {/* Secondary Mobile Viewport Mockup */}
           <FadeUp
-            delay={0.15}
+            delay={0.02}
             className="w-full max-w-xs lg:absolute lg:left-[12%] lg:top-[62%] lg:w-64 lg:-translate-y-1/2"
           >
             <DashboardMockup 
               kind="mobile" 
               accent="purple" 
-              className="animate-float shadow-[0_20px_60px_-15px_rgba(139,92,246,0.4)]" 
+              className="animate-float shadow-glow-purple" 
             />
           </FadeUp>
 
           {/* Tertiary Finance/Widget Viewport Mockup */}
           <FadeUp
-            delay={0.25}
+            delay={0.02}
             className="w-full max-w-xs lg:absolute lg:right-[10%] lg:top-[20%] lg:w-72"
           >
             <DashboardMockup 
               kind="finance" 
               accent="cyan" 
-              className="animate-float shadow-[0_20px_60px_-15px_rgba(34,211,238,0.35)]" 
+              className="animate-float shadow-glow-cyan" 
             />
           </FadeUp>
         </div>

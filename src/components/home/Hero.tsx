@@ -12,6 +12,7 @@ import { RevealText } from "@/components/animations/RevealText";
 import { Counter } from "@/components/animations/Counter";
 import { DashboardMockup } from "./DashboardMockup";
 import { ANIMATION } from "@/lib/constants";
+import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,7 @@ export function Hero() {
   return (
     <section
       ref={sceneRef}
-      className="relative overflow-hidden pt-16 pb-16 lg:pt-24 lg:pb-24 bg-white dark:bg-background"
+      className="relative overflow-hidden py-section-sm lg:py-section-lg bg-background"
     >
       {/* Background Elements (Subtle & Minimal) */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-aurora-1 opacity-40" />
@@ -59,7 +60,7 @@ export function Hero() {
             
             {/* Clean Eyebrow */}
             <div data-hero-fade>
-              <p className="mb-4 text-sm font-semibold tracking-wider text-[#1A73E8] uppercase">
+              <p className="mb-4 text-sm font-semibold tracking-wider text-accent uppercase">
                 {heroData.eyebrow || "The Future of Education"}
               </p>
             </div>
@@ -68,52 +69,42 @@ export function Hero() {
             <RevealText
               lines={heroData.headlineLines}
               className="mt-2"
-              lineClassName="text-4xl mb-2 md:text-5xl lg:text-[56px] font-medium tracking-tight text-foreground leading-[1.15]"
+              lineClassName="text-4xl md:text-5xl lg:text-hero font-bold tracking-tight text-foreground mb-2 leading-[1.1]"
             />
 
             {/* Clean Description Text */}
             <p
               data-hero-fade
-              className="mt-6 text-lg text-muted-foreground leading-relaxed"
+              className="mt-6 text-lg md:text-xl text-muted leading-relaxed"
             >
               {heroData.description}
             </p>
 
-            {/* Google-Style Pill CTA Group */}
+            {/* Action Buttons */}
             <div
               data-hero-fade
               className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
             >
-              {/* Primary Blue Pill */}
-              <a 
-                href={heroData.primaryCta.href} 
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-[#1A73E8] px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-blue-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
+              <Button href={heroData.primaryCta.href} variant="primary" showArrow>
                 {heroData.primaryCta.label}
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              {/* Secondary Light Pill */}
-              <a 
-                href={heroData.secondaryCta.href} 
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 px-8 py-3.5 text-base font-medium text-foreground transition-all hover:bg-gray-200 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
-              >
-                <Play className="w-4 h-4 fill-current" />
+              </Button>
+              
+              <Button href={heroData.secondaryCta.href} variant="secondary" icon={Play}>
                 {heroData.secondaryCta.label}
-              </a>
+              </Button>
             </div>
 
             {/* Minimalist Trust Indicators / Stats */}
             <div
               data-hero-fade
-              className="mt-12 grid w-full grid-cols-3 gap-6 border-t border-gray-200 dark:border-white/10 pt-8"
+              className="mt-12 grid w-full grid-cols-3 gap-6 border-t border-border dark:border-white/10 pt-8"
             >
               {heroData.stats.map((stat) => (
                 <div key={stat.id}>
-                  <p className="text-3xl font-medium tracking-tight text-foreground">
+                  <p className="text-3xl md:text-4xl font-medium tracking-tight text-foreground">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="mt-1 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                  <p className="mt-1 text-xs font-semibold tracking-wider text-muted uppercase">
                     {stat.label}
                   </p>
                 </div>
@@ -139,21 +130,21 @@ export function Hero() {
             
             {/* Subtle Semantic Glow */}
             <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
-              <div className="h-80 w-80 rounded-full bg-blue-500/10 blur-[140px]" />
+              <div className="h-80 w-80 rounded-full bg-accent/10 blur-[140px]" />
             </div>
           </div>
 
         </div>
         
         {/* Secondary Dashboard Mockup Reveal (Clean Premium Wrapper) */}
-        <div data-hero-mockup className="relative mt-16 md:mt-24 w-full rounded-[2rem] bg-gray-50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/10 shadow-2xl p-4 sm:p-8 overflow-hidden">
+        <div data-hero-mockup className="relative mt-16 md:mt-24 w-full rounded-modal bg-surface border border-border shadow-card-lg p-4 sm:p-8 overflow-hidden">
           {/* Refined subtle glow */}
-          <div className="absolute -inset-x-5 -top-5 -z-10 h-40 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 blur-3xl" />
+          <div className="absolute -inset-x-5 -top-5 -z-10 h-40 bg-gradient-to-r from-accent/10 to-accent-cyan/10 blur-3xl" />
 
           <DashboardMockup
             kind="reports"
             accent="blue"
-            className="animate-float w-full h-auto rounded-xl shadow-lg border border-gray-200 dark:border-white/10"
+            className="animate-float w-full h-auto rounded-card shadow-card-md border border-border"
           />
         </div>
       </Container>

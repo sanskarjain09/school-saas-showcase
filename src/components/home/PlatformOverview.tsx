@@ -1,12 +1,12 @@
-"use client";
 
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
 
 export function PlatformOverview() {
   return (
-    <Section id="platform-overview" className="overflow-hidden py-20 lg:py-32 bg-white dark:bg-background border-t border-gray-100 dark:border-white/5">
+    <Section id="platform-overview" className="overflow-hidden py-section-sm lg:py-section-lg bg-background border-t border-border">
       <Container>
         {/* Grid gap ko bada kiya taaki dono sides ko saans lene ki jagah mile */}
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
@@ -15,28 +15,25 @@ export function PlatformOverview() {
           <div className="flex flex-col items-start text-left max-w-2xl">
             
             {/* Clean Eyebrow */}
-            <p className="mb-4 text-sm font-semibold tracking-wider text-[#1A73E8] uppercase">
+            <p className="mb-4 text-sm font-semibold tracking-wider text-accent uppercase">
               Platform Overview
             </p>
 
             {/* Google-Style Large Heading */}
-            <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight text-foreground leading-[1.15]">
+            <h2 className="text-4xl md:text-5xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
               Every Module. Every Workflow. Everything Connected.
             </h2>
             
             {/* Clean Description Text */}
-            <p className="mt-6 text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <p className="mt-6 text-lg lg:text-xl text-muted leading-relaxed">
               Eliminate data silos with a unified ecosystem designed specifically for modern educational institutions. Seamlessly bridge administration, academics, and student success.
             </p>
           
             {/* Pill-shaped Secondary CTA Button */}
             <div className="mt-10 flex w-full sm:w-auto">
-              <a 
-                href="/features" 
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 px-8 py-4 text-base font-medium text-foreground transition-all hover:bg-gray-200 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
-              >
+              <Button href="/features" variant="secondary" size="lg" className="w-full sm:w-auto">
                 Explore All Modules <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Button>
             </div>
           </div>
 
@@ -48,12 +45,12 @@ export function PlatformOverview() {
                 alt="JINANAM Campus Platform Overview"
                 fill
                 /* Scale ko bada kiya taaki diagram khul ke aaye aur chota na lage */
-                className="object-contain drop-shadow-2xl scale-125 lg:scale-140 origin-center"
+                className="object-contain drop-shadow-2xl scale-125 lg:scale-150 origin-center"
               />
               
               {/* Subtle Semantic Glow */}
               <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
-                <div className="h-96 w-96 rounded-full bg-blue-500/10 blur-[140px]" />
+                <div className="h-96 w-96 rounded-full bg-accent/10 blur-[140px]" />
               </div>
             </div>
           </div>

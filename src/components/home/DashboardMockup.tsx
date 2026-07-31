@@ -50,10 +50,10 @@ export function DashboardMockup({ kind, accent, className }: DashboardMockupProp
       )}
     >
       {/* window chrome */}
-      <div className="flex items-center gap-1.5 border-b border-border bg-white/[0.02] px-4 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+      <div className="flex items-center gap-1.5 border-b border-border bg-foreground/[0.02] px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+        <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+        <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
         <span className="ml-3 text-xs text-muted">jinanam.in/app</span>
       </div>
 
@@ -63,9 +63,9 @@ export function DashboardMockup({ kind, accent, className }: DashboardMockupProp
           <div className={cn("flex h-8 w-8 items-center justify-center rounded-lg", accentBg[accent])}>
             <Icon className={cn("h-4 w-4", accentText[accent])} aria-hidden />
           </div>
-          <span className="h-1.5 w-6 rounded-full bg-white/10" />
-          <span className="h-1.5 w-6 rounded-full bg-white/10" />
-          <span className="h-1.5 w-6 rounded-full bg-white/10" />
+          <span className="h-1.5 w-6 rounded-full bg-foreground/10" />
+          <span className="h-1.5 w-6 rounded-full bg-foreground/10" />
+          <span className="h-1.5 w-6 rounded-full bg-foreground/10" />
         </div>
 
         {/* main panel */}
@@ -91,7 +91,7 @@ export function DashboardMockup({ kind, accent, className }: DashboardMockupProp
           {/* list rows */}
           <div className="space-y-2.5">
             {config.rows.map((row, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2.5">
+              <div key={i} className="flex items-center gap-3 rounded-lg bg-foreground/[0.03] px-3 py-2.5">
                 <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", accentBg[accent])} />
                 <span className="truncate text-xs text-foreground/80">{row}</span>
               </div>

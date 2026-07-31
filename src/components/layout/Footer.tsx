@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       {/* 1. Responsive Vertical Padding aligned with the Design System */}
-      <Container className="py-10 lg:py-10 md:py-10">
+      <Container className="pt-section-sm pb-8">
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-6 lg:gap-12">
           
           {/* Brand & Description */}
@@ -20,8 +20,8 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="School ERP Logo"
-                width={150}
-                height={100}
+                width={200}
+                height={50}
                 className="object-contain"
                 // Removed 'priority' - Footer images should be lazy loaded for better LCP
               />
@@ -62,7 +62,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link 
                       href={link.href} 
-                      className="text-small text-muted transition-colors duration-200 hover:text-accent-blue"
+                      className="text-small text-muted transition-colors duration-200 hover:text-accent"
                     >
                       {link.label}
                     </Link>

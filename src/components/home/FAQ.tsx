@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 import { faqData } from "@/data/faq";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -15,7 +14,7 @@ export function FAQ() {
   const [openId, setOpenId] = useState<string | null>(faqData[0]?.id ?? null);
 
   return (
-    <Section id="faq" className="bg-surface/20 py-10 lg:py-0 md:py-24 overflow-hidden">
+    <Section id="faq" className="bg-surface/20 py-section-sm lg:py-section-lg overflow-hidden">
       <Container>
         {/* Centered Heading */}
         <Heading 
@@ -43,26 +42,23 @@ export function FAQ() {
                     aria-hidden
                   />
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen ? (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-6 pb-5 text-sm leading-relaxed text-muted">{item.answer}</p>
-                    </motion.div>
-                  ) : null}
-                </AnimatePresence>
+                <div 
+                  className={cn(
+                    "grid transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-muted">{item.answer}</p>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
 
         {/* Explore All FAQs Button */}
-        <FadeUp delay={0.2}>
+        <FadeUp delay={0.02}>
           <div className="mt-4 flex justify-center">
             <Button
               href="/faq"

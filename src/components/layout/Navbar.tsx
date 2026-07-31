@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { navigationData } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { LanguageSelector } from "./LanguageSelector";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
 
@@ -38,7 +39,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-border bg-white/80 shadow-sm backdrop-blur-xl"
+          ? "border-b border-border bg-surface/80 shadow-sm backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       )}
     >
@@ -72,6 +73,7 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden items-center gap-5 lg:flex">
+            <LanguageSelector />
             <Link
               href="/admin/login"
               className="text-caption font-medium text-muted transition-colors duration-200 hover:text-foreground"
@@ -88,21 +90,24 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-surface-hover lg:hidden"
-            aria-expanded={open}
-            aria-label="Toggle navigation menu"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+            <div className="flex items-center lg:hidden">
+              <LanguageSelector />
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                className="ml-2 flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-surface-hover"
+                aria-expanded={open}
+                aria-label="Toggle navigation menu"
+              >
+                {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
         </Container>
       </nav>
 
       {/* Mobile Menu Dropdown */}
       {open ? (
-        <div className="border-t border-border bg-white/95 px-6 py-6 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-border bg-surface/95 px-6 py-6 backdrop-blur-xl lg:hidden">
           <div className="flex flex-col gap-5">
             {navigationData.links.map((link) => (
               <Link
