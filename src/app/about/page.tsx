@@ -46,13 +46,13 @@ export default function AboutPage() {
           <div className="flex flex-col items-start max-w-xl">
             
             {/* Clean Eyebrow (Replaced solid badge) */}
-            <p className="mb-4 text-sm font-semibold tracking-wider text-accent uppercase">
-              About JiNANAM Technologies
+            <p className="mb-4 text-sm font-semibold tracking-wider text-accent ">
+              ABOUT JiNANAM TECHNOLOGIES
             </p>
 
             {/* Google-Style Large Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
-              Building Technologies That Powers Modern Education.
+              Building Technology That Powers Modern Education.
             </h1>
             
             {/* Simple Description with spacing */}
