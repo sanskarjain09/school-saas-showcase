@@ -52,7 +52,7 @@ export default function AboutPage() {
 
             {/* Google-Style Large Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
-              Building Technology That Powers Modern Education.
+              Building Technologies That Powers Modern Education.
             </h1>
             
             {/* Simple Description with spacing */}

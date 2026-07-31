@@ -248,7 +248,7 @@ export default function FeaturesPage() {
                       src={role.img}
                       alt={role.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 group-hover:grayscale-0"
                     />
                   </div>
                   <div className="p-6">

@@ -7,7 +7,7 @@ export const footerData: FooterData = {
       title: "Product",
       links: [
         { label: "Features", href: ROUTES.features },
-        { label: "white-label", href: ROUTES.white_label },
+        { label: "White Label", href: ROUTES.white_label },
         { label: "Industries", href: ROUTES.industries },
       ],
     },
