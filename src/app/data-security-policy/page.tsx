@@ -260,7 +260,7 @@ export default function DataSecurityPolicyPage() {
             {/* 17. No Absolute Security, 18. Policy Updates, 19 & 20. Governing Law/Jurisdiction */}
             <FadeUp>
               <div className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground tracking-tight border-b pb-3 border-gray-100 dark:border-white/10">17. Security Limits, Updates & Jurisdiction</h2>
+                <h2 className="text-2xl font-semibold text-foreground tracking-tight border-b pb-3 border-gray-100 dark:border-white/10">17-20. Security Limits, Updates & Jurisdiction</h2>
                 <p>
                   Although commercially reasonable safeguards are implemented, no technology platform can guarantee complete protection against every possible security risk. JiNANAM Technologies may revise this Policy from time to time by publishing updated versions on the official website.
                 </p>
