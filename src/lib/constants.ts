@@ -3,6 +3,7 @@ export const ROUTES = {
   demo: "/book-demo",
   pricing: "/pricing",
   features: "/features",
+  industries: "/industries",
   products: "/#products",
   faq: "/#faq",
   contact: "/#contact",

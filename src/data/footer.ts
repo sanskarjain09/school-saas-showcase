@@ -8,25 +8,29 @@ export const footerData: FooterData = {
       links: [
         { label: "Features", href: ROUTES.features },
         { label: "white-label", href: ROUTES.white_label },
-        { label: "Contact", href: ROUTES.contact },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "All Features", href: ROUTES.features },
-        { label: "FAQ", href: ROUTES.faq },
-        { label: "Book a Demo", href: ROUTES.demo },
+        { label: "Industries", href: ROUTES.industries },
       ],
     },
     {
       title: "Company",
       links: [
-        { label: "About", href: "/#about" },
-        { label: "Contact", href: ROUTES.contact },
+        { label: "About", href: "/about" },
+        { label: "Contact", href: "/contact" },
         // { label: "Careers", href: "/#careers" },
+      ],
+    },
+    {
+      title: "Policies",
+      links: [
+        { label: "Privacy Policy", href: "/privacy-policy" },
+        { label: "Terms & Conditions", href: "/terms-conditions" },
+        { label: "Refund & Cancellation Policy", href: "/refund-cancellation-policy" },
+        { label: "Account Deletion Policy", href: "/account-deletion-policy" },
+        { label: "Data Security Policy", href: "/data-security-policy" },
+        { label: "Cookie Policy", href: "/cookie-policy" },
       ],
     },
   ],
   bottomNote: "All systems operational.",
 };
+
