@@ -170,7 +170,7 @@ export default function CookiePolicyPage() {
 
             <FadeUp delay={0.02}>
               <div className="space-y-2">
-                <h2 className="text-2xl font-semibold text-foreground tracking-tight border-b pb-3 border-border mt-10 mb-4">9. Children's Privacy</h2>
+                <h2 className="text-2xl font-semibold text-foreground tracking-tight border-b pb-3 border-border mt-10 mb-4">9. Children&apos;s Privacy</h2>
                 <p className="mb-4">Our website is intended primarily for Educational Institutions and authorized users.</p>
                 <p className="mb-4">We do not knowingly use cookies to intentionally collect personal information directly from children.</p>
                 <p className="mb-4">Student-related information is processed through the Platform under the control of the respective Educational Institution in accordance with our Privacy Policy.</p>

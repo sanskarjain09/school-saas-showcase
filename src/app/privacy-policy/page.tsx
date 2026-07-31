@@ -385,7 +385,7 @@ export default function PrivacyPolicyPage() {
 
             <FadeUp delay={0.02}>
               <div className="space-y-2">
-                <h2 className="text-2xl font-semibold text-foreground tracking-tight border-b pb-3 border-border mt-10 mb-4">9. Children's Privacy</h2>
+                <h2 className="text-2xl font-semibold text-foreground tracking-tight border-b pb-3 border-border mt-10 mb-4">9. Children&apos;s Privacy</h2>
                 <p className="mb-4">JiNANAM Campus is intended exclusively for use by Educational Institutions.</p>
                 <p className="mb-4">Student accounts are generally created, managed and controlled by the respective Educational Institution.</p>
                 <p className="mb-4">Where applicable, Parents or Legal Guardians remain responsible for supervising a child&apos;s use of the Platform.</p>
