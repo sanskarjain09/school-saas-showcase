@@ -94,7 +94,7 @@ export default function FeaturesPage() {
 
                 {/* Simple Description */}
                 <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                  JINANAM Campus: One intelligent platform to run your entire institution seamlessly.
+                  JiNANAM Campus: One intelligent platform to run your entire institution seamlessly.
                 </p>
 
                 {/* Pill-shaped Buttons */}
@@ -125,7 +125,7 @@ export default function FeaturesPage() {
               <div className="relative w-full aspect-square md:aspect-video lg:aspect-square flex items-center justify-center">
                 <Image
                   src="/images/faturesall.png"
-                  alt="Jinanam Campus Devices"
+                  alt="JiNANAM Campus Devices"
                   fill
                   priority // Ye image upar hai to priority dene se fast load hogi
                   className="object-contain drop-shadow-2xl scale-110"
@@ -214,7 +214,7 @@ export default function FeaturesPage() {
         <Container>
           <div className="lg:w-1/3 mb-10">
             <h3 className="text-xl font-bold text-slate-900 uppercase tracking-widest mb-2">Daily Campus Experience</h3>
-            <p className="text-sm text-slate-500 leading-relaxed">A connected day on campus. Everything happens automatically inside JINANAM Campus.</p>
+            <p className="text-sm text-slate-500 leading-relaxed">A connected day on campus. Everything happens automatically inside JiNANAM Campus.</p>
           </div>
           <FadeUp>
             <div className="w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex items-center justify-center">
@@ -266,7 +266,7 @@ export default function FeaturesPage() {
       <Section className="py-12 lg:py-20 bg-slate-50/50 border-y border-slate-200">
         <Container>
           <div className="mb-16 text-center max-w-2xl mx-auto">
-            <Heading title="Why Institutions Love Jinanam Campus" align="center" />
+            <Heading title="Why Institutions Love JiNANAM Campus" align="center" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
@@ -320,7 +320,7 @@ export default function FeaturesPage() {
               <div className="relative z-10 max-w-2xl">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">One Platform. Every Department. Perfectly Connected.</h2>
                 <p className="text-blue-100 text-lg leading-relaxed">
-                  JINANAM Campus brings together every department, every workflow and every user into one beautifully designed digital ecosystem that helps educational institutions operate smarter, communicate better and grow with confidence.
+                  JiNANAM Campus brings together every department, every workflow and every user into one beautifully designed digital ecosystem that helps educational institutions operate smarter, communicate better and grow with confidence.
                 </p>
               </div>
 

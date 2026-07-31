@@ -3,9 +3,9 @@ import { ROUTES } from "@/lib/constants";
 
 export const navigationData: NavigationData = {
   links: [
-    { label: "Home", href: "/" },
     { label: "Features", href: "/features" },
     { label: "White Label", href: "/white-label" },
+    { label: "Industries", href: "/industries" },
     { label: "Contact", href: "/contact-us" },
     { label: "About Us", href: "/about" },
   ],

@@ -3,9 +3,9 @@ import type { FAQItem } from "@/types";
 export const faqData: FAQItem[] = [
   {
     id: "faq-1",
-    question: "Can CampusHub handle more than one school or campus?",
+    question: "Can J'Campus handle more than one school or campus?",
     answer:
-      "Yes. CampusHub is built multi-tenant from the ground up — each school gets isolated data, its own branding, and can be managed centrally or independently from a super admin dashboard.",
+      "Yes. JiNANAM Campus is built multi-tenant from the ground up — each school gets isolated data, its own branding, and can be managed centrally or independently from a super admin dashboard.",
   },
   {
     id: "faq-2",

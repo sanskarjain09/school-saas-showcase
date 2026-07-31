@@ -47,7 +47,7 @@ export default function AboutPage() {
             
             {/* Clean Eyebrow (Replaced solid badge) */}
             <p className="mb-4 text-sm font-semibold tracking-wider text-gray-500 uppercase">
-              About Jinanam Technologies
+              About JiNANAM Technologies
             </p>
 
             {/* Google-Style Large Heading */}
@@ -58,7 +58,7 @@ export default function AboutPage() {
             {/* Simple Description with spacing */}
             <div className="mt-6 space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                JINANAM Technologies is a technology company focused on building intelligent, secure and beautifully designed digital platforms for educational institutions.
+                JiNANAM Technologies is a technology company focused on building intelligent, secure and beautifully designed digital platforms for educational institutions.
               </p>
               <p>
                 For over 3 years, we have been committed to helping institutions embrace digital transformation through modern, scalable and user-friendly technology.
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 href="/platform" 
                 className="w-full sm:w-auto rounded-full bg-[#1A73E8] px-8 py-3.5 text-base font-medium text-white transition-all hover:bg-blue-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-center"
               >
-                Explore JINANAM Campus
+                Explore JiNANAM Campus
               </a>
               
               <a 
@@ -134,13 +134,13 @@ export default function AboutPage() {
               {/* Clean Paragraph Spacing */}
               <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  JINANAM Technologies was founded with a simple vision: educational institutions deserve technology that is powerful, beautifully designed and easy to use.
+                  JiNANAM Technologies was founded with a simple vision: educational institutions deserve technology that is powerful, beautifully designed and easy to use.
                 </p>
                 <p>
                   Instead of disconnected software, manual processes and scattered communication, institutions deserve one connected platform that simplifies daily operations and enhances every experience.
                 </p>
                 <p>
-                  JINANAM Campus was created to become the digital foundation for modern educational institutions—helping them focus on what matters most: education and student success.
+                  JiNANAM Campus was created to become the digital foundation for modern educational institutions—helping them focus on what matters most: education and student success.
                 </p>
               </div>
 
@@ -220,8 +220,8 @@ export default function AboutPage() {
             <div className="flex flex-col items-start max-w-xl">
               
               {/* Subtle Eyebrow (Replaced Badge) */}
-              <p className="mb-4 text-sm font-semibold tracking-wider text-gray-500 uppercase">
-                Why We Built JINANAM Campus
+              <p className="mb-4 text-sm font-semibold tracking-wider text-gray-500 ">
+                Why We Built JiNANAM Campus
               </p>
 
               {/* Google-Style Large Heading */}
@@ -233,7 +233,7 @@ export default function AboutPage() {
               {/* Clean Paragraph Spacing */}
               <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  JINANAM Campus was designed because educational institutions need one platform that brings together administration, academics, communication, finance, transport, library, HR and campus operations without unnecessary complexity.
+                  JiNANAM Campus was designed because educational institutions need one platform that brings together administration, academics, communication, finance, transport, library, HR and campus operations without unnecessary complexity.
                 </p>
                 <p>
                   Instead of managing multiple disconnected tools, institutions can operate through one unified digital ecosystem—saving time, reducing workload and enhancing every experience across the campus.
@@ -283,7 +283,7 @@ export default function AboutPage() {
               
               {/* Clean Paragraph Spacing */}
               <p className="mt-8 text-lg text-gray-400 leading-relaxed max-w-xl">
-                JINANAM Technologies continues to invest in innovation, platform enhancements and user experience improvements so institutions always benefit from modern technology designed for long-term growth and lasting impact.
+                JiNANAM Technologies continues to invest in innovation, platform enhancements and user experience improvements so institutions always benefit from modern technology designed for long-term growth and lasting impact.
               </p>
             </div>
 
@@ -327,7 +327,7 @@ export default function AboutPage() {
             <FadeUp delay={0.5}>
               <div className="aspect-square bg-slate-900 rounded-xl mb-5 flex flex-col items-center justify-center text-center p-4 border border-slate-800 shadow-lg">
                 <GraduationCap className="w-8 h-8 text-white mb-3" />
-                <span className="text-white font-bold text-sm leading-tight">JINANAM<br />CAMPUS</span>
+                <span className="text-white font-bold text-sm leading-tight">JiNANAM<br />CAMPUS</span>
                 <p className="text-[10px] text-slate-400 mt-2 leading-tight">Everything Connected.<br />Everyone Empowered.</p>
               </div>
             </FadeUp>
@@ -344,7 +344,7 @@ export default function AboutPage() {
               <div className="relative z-10 max-w-2xl">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">Let&apos;s Build the Future of Education Together.</h2>
                 <p className="text-blue-100 text-lg leading-relaxed">
-                  Whether you&apos;re managing a school, college, university, coaching institute or multi-campus educational group, JINANAM Campus provides the connected digital foundation to simplify operations and create better experiences for everyone.
+                  Whether you&apos;re managing a school, college, university, coaching institute or multi-campus educational group, JiNANAM Campus provides the connected digital foundation to simplify operations and create better experiences for everyone.
                 </p>
               </div>
               <div className="relative z-10 flex gap-4 shrink-0 flex-wrap">

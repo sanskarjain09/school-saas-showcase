@@ -27,22 +27,22 @@ export function Contact() {
               <div className="mt-12 flex flex-col gap-8">
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-gray-500 uppercase">Email us</p>
-                  <a href="mailto:hello@jinanam.com" className="mt-2 text-xl font-medium text-[#1A73E8] transition-colors hover:text-blue-700">
-                    hello@jinanam.com
+                  <a href="mailto:hello@jinanamcampus.in" className="mt-2 text-xl font-medium text-[#1A73E8] transition-colors hover:text-blue-700">
+                    hello@jinanamcampus.in
                   </a>
                 </div>
                 
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-gray-500 uppercase">Call us</p>
-                  <a href="tel:+919876543210" className="mt-2 text-xl font-medium text-[#1A73E8] transition-colors hover:text-blue-700">
-                    +91 98765 43210
+                  <a href="tel:+918693838281" className="mt-2 text-xl font-medium text-[#1A73E8] transition-colors hover:text-blue-700">
+                    +91 869 3838 281
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-gray-500 uppercase">Location</p>
                   <p className="mt-2 text-lg text-foreground">
-                    Makroniya, Madhya Pradesh, India
+                    203, Navghar Road, Mulund East. Mumbai 400081. Maharashtra. India
                   </p>
                 </div>
               </div>

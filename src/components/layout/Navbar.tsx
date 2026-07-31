@@ -50,8 +50,8 @@ export function Navbar() {
             <Image
               src="/images/logo.png"
               alt="School ERP Logo"
-              width={100}
-              height={60}
+              width={200}
+              height={180}
               className="object-contain"
               priority
             />

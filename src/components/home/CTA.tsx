@@ -21,15 +21,15 @@ export function CTA() {
             
             <p className="mx-auto mt-4 max-w-lg text-base text-muted">
               Book a free demo and see how {heroData.stats[0]?.value.toLocaleString()}+ schools already run their
-              day on JINANAM Campus.
+              day on JiNANAM Campus.
             </p>
             
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href={ROUTES.demo} size="lg" showArrow>
                 Book a Free Demo
               </Button>
-              <Button href={ROUTES.pricing} variant="secondary" size="lg">
-                View Pricing
+              <Button href={ROUTES.features} variant="secondary" size="lg">
+                View Features
               </Button>
             </div>
           </div>

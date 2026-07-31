@@ -23,7 +23,7 @@ export function Heading({
       
       {/* EYEBROW */}
       {eyebrow ? (
-        <p className="mb-content-xs text-small font-semibold uppercase tracking-[0.2em] text-accent-cyan">
+        <p className="mb-content-xs text-small font-semibold tracking-[0.2em] text-accent-cyan">
           {eyebrow}
         </p>
       ) : null}

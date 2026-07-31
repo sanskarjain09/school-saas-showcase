@@ -4,7 +4,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t1",
     quote:
-      "We run four campuses on CampusHub now. Fee collection that used to take a week of reconciliation happens automatically overnight.",
+      "We run four campuses on J'Campus now. Fee collection that used to take a week of reconciliation happens automatically overnight.",
     name: "Anita Rao",
     role: "Director",
     school: "Silver Oak Academy Group",

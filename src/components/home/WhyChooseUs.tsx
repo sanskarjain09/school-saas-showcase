@@ -14,7 +14,7 @@ export function WhyChooseUs() {
         {/* 1. Centered Header Layout for perfectly balanced UI */}
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Heading
-            eyebrow="Why JINANAM Campus"
+            eyebrow="Why JiNANAM Campus"
             title="Everything your school runs on, minus the chaos."
             description="Replace a dozen disconnected tools and spreadsheets with one platform your entire staff already knows how to use."
           />

@@ -24,7 +24,7 @@ export const footerData: FooterData = {
       links: [
         { label: "About", href: "/#about" },
         { label: "Contact", href: ROUTES.contact },
-        { label: "Careers", href: "/#careers" },
+        // { label: "Careers", href: "/#careers" },
       ],
     },
   ],
