@@ -228,7 +228,7 @@ export default function IndustriesPage() {
             <Section className="py-section-sm lg:py-section-lg bg-background">
                 <Container>
                     <div className="mb-16 text-center max-w-2xl mx-auto">
-                        <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase mb-3">WHY JiNANAM</p>
+                        <p className="text-xs font-semibold tracking-[0.2em] text-accent mb-3">WHY JiNANAM</p>
                         <Heading title="Why Every Institution Chooses Jinanam Campus" align="center" />
                     </div>
 
