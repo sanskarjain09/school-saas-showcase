@@ -64,7 +64,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-small font-medium text-muted transition-colors duration-200 hover:text-foreground"
+                className="text-lg font-semibold text-foreground/90 transition-colors duration-200 hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -76,13 +76,13 @@ export function Navbar() {
             <LanguageSelector />
             <Link
               href="/admin/login"
-              className="text-caption font-medium text-muted transition-colors duration-200 hover:text-foreground"
+              className="text-base font-semibold text-foreground/80 transition-colors duration-200 hover:text-foreground"
             >
               Admin Login
             </Link>
             <Button
               href={navigationData.cta.href}
-              size="md"
+              size="lg"
               onClick={() => track("demo_cta_click", { location: "navbar-desktop" })}
             >
               {navigationData.cta.label}
@@ -114,7 +114,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-body font-medium text-foreground/80 transition-colors hover:text-foreground"
+                className="text-lg font-semibold text-foreground transition-colors hover:text-accent"
               >
                 {link.label}
               </Link>
@@ -130,7 +130,7 @@ export function Navbar() {
             <Link
               href="/admin/login"
               onClick={() => setOpen(false)}
-              className="text-center text-caption font-medium text-muted transition-colors hover:text-foreground"
+              className="text-center text-base font-semibold text-foreground/80 transition-colors hover:text-foreground"
             >
               Admin Login
             </Link>

@@ -18,9 +18,9 @@ export function DashboardPreview() {
         />
 
         {/* Multi-Device Floating Mockup Showcase */}
-        <div className="relative mt-0 flex flex-col items-center gap-8 lg:h-[420px] lg:flex-row lg:items-center lg:justify-center lg:gap-0">
+        <div className="relative mt-0 flex flex-col items-center gap-8 lg:h-[600px] lg:flex-row lg:items-center lg:justify-center lg:gap-0">
           {/* Primary Desktop Viewport Mockup */}
-          <FadeUp className="w-full max-w-xl lg:absolute lg:left-1/2 lg:top-1/2 lg:w-[560px] lg:-translate-x-1/2 lg:-translate-y-1/2">
+          <FadeUp className="w-full max-w-2xl lg:absolute lg:left-1/2 lg:top-1/2 lg:w-[750px] lg:-translate-x-1/2 lg:-translate-y-1/2 z-10">
             <Image 
               src="/images/dashboard/2.png"
               alt="Desktop Dashboard Mockup"
@@ -33,7 +33,7 @@ export function DashboardPreview() {
           {/* Secondary Mobile Viewport Mockup */}
           <FadeUp
             delay={0.02}
-            className="w-full max-w-xs lg:absolute lg:left-[12%] lg:top-[62%] lg:w-64 lg:-translate-y-1/2"
+            className="w-full max-w-md lg:absolute lg:left-[2%] lg:top-[65%] lg:w-[340px] lg:-translate-y-1/2 z-20"
           >
             <Image 
               src="/images/dashboard/3.png"
@@ -47,7 +47,7 @@ export function DashboardPreview() {
           {/* Tertiary Finance/Widget Viewport Mockup */}
           <FadeUp
             delay={0.02}
-            className="w-full max-w-xs lg:absolute lg:right-[10%] lg:top-[20%] lg:w-72"
+            className="w-full max-w-md lg:absolute lg:right-[2%] lg:top-[25%] lg:w-[420px] z-20"
           >
             <Image 
               src="/images/dashboard/4.png"

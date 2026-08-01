@@ -102,13 +102,13 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           
           <FadeUp delay={0.02} className="order-2 lg:order-1">
-            <div className="relative w-full aspect-square bg-card border-border rounded-3xl flex items-center justify-center p-8 overflow-hidden border shadow-card-sm">
+            <div className="relative w-full aspect-square flex items-center justify-center">
               <Image
                 src="/images/ourstory.png"
                 alt="Our Story Illustration"
                 width={800}
                 height={800}
-                className="w-full h-full object-contain drop-shadow-md"
+                className="w-full h-full object-contain drop-shadow-xl scale-105 md:scale-110 origin-center"
               />
             </div>
           </FadeUp>

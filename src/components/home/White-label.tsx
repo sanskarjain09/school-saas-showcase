@@ -108,7 +108,7 @@ export function WhiteLabel() {
   return (
     <Section
       id="white-label"
-      className="relative overflow-hidden bg-surface/20 py-section-sm lg:py-section-lg"
+      className="relative overflow-hidden bg-surface/20 pt-section-sm pb-6 lg:pt-section-lg lg:pb-12"
     >
       {/* Shine keyframe definition */}
       <style jsx global>{`
@@ -265,7 +265,7 @@ export function WhiteLabel() {
             </div>
           </div>
 
-          <div className="mt-10 flex justify-center gap-3">
+          <div className="mt-6 flex justify-center gap-3">
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}

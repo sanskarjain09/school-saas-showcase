@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -15,6 +15,39 @@ import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   const sceneRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || isInteracting) return;
+
+    let animationId: number;
+    let direction = 1;
+
+    const scroll = () => {
+      if (window.innerWidth >= 1024) return;
+
+      el.scrollLeft += direction * 0.4;
+
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+        direction = -1;
+      } else if (el.scrollLeft <= 1) {
+        direction = 1;
+      }
+
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    const timeoutId = setTimeout(() => {
+      animationId = requestAnimationFrame(scroll);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (animationId) cancelAnimationFrame(animationId);
+    };
+  }, [isInteracting]);
 
   useGSAP(
     () => {
@@ -52,11 +85,11 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-grid opacity-50" />
 
       <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          
+        <div className="grid grid-cols-1 items-center gap-2 lg:grid-cols-2 lg:gap-16">
+
           {/* Left Content */}
           <div className="text-left flex flex-col items-start max-w-2xl">
-            
+
             {/* Clean Eyebrow */}
             <div data-hero-fade>
               <p className="mb-4 text-sm font-semibold tracking-wider text-accent uppercase">
@@ -82,12 +115,12 @@ export function Hero() {
             {/* Action Buttons */}
             <div
               data-hero-fade
-              className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+              className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
             >
               <Button href={heroData.primaryCta.href} variant="primary" showArrow>
                 {heroData.primaryCta.label}
               </Button>
-              
+
               <Button href={heroData.secondaryCta.href} variant="secondary" icon={Play}>
                 {heroData.secondaryCta.label}
               </Button>
@@ -96,7 +129,7 @@ export function Hero() {
             {/* Minimalist Trust Indicators / Stats */}
             <div
               data-hero-fade
-              className="mt-12 grid w-full grid-cols-3 gap-2 sm:gap-4 md:gap-6 border-t border-border dark:border-white/10 pt-8"
+              className="mt-6 lg:mt-12 grid w-full grid-cols-3 gap-2 sm:gap-4 md:gap-6 border-t border-border dark:border-white/10 pt-4 lg:pt-8"
             >
               {heroData.stats.map((stat) => (
                 <div key={stat.id} className="min-w-0 flex flex-col justify-center">
@@ -114,38 +147,43 @@ export function Hero() {
           {/* Right Image Container (Perfected Size & Balance) */}
           <div
             data-hero-mockup
-            className="relative flex justify-center lg:justify-end w-full"
+            className="relative flex w-full justify-center lg:justify-end mt-2 -mb-2 lg:mt-0 lg:mb-0"
           >
-            {/* Width badha di hai aur thoda scale de diya hai taaki image prominent lage */}
-            <div className="relative w-full max-w-xl lg:max-w-2xl aspect-square flex items-center justify-center">
-              <Image
-                src="/images/two.png"
-                alt="Platform Illustration"
-                fill
-                priority
-                className="object-contain w-full h-full drop-shadow-2xl scale-110 md:scale-125 lg:scale-[1.3]"
-              />
-            </div>
-            
-            {/* Subtle Semantic Glow */}
-            <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
-              <div className="h-80 w-80 rounded-full bg-accent/10 blur-[140px]" />
+            <div
+              ref={scrollRef}
+              className="w-[100vw] overflow-x-auto overflow-y-visible lg:overflow-visible flex items-center scrollbar-hide snap-x snap-mandatory"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              onTouchStart={() => setIsInteracting(true)}
+              onTouchEnd={() => { setTimeout(() => setIsInteracting(false), 2000) }}
+            >
+              {/* Force image to be wide on mobile to enable scrolling */}
+              <div className="relative w-[125%] sm:w-[115%] shrink-0 lg:w-full max-w-xl lg:max-w-2xl aspect-[1.1] lg:aspect-square flex items-center justify-center pl-4 lg:pl-0">
+                <Image
+                  src="/images/two.png"
+                  alt="Platform Illustration"
+                  fill
+                  priority
+                  className="object-contain w-full h-full drop-shadow-2xl origin-center scale-[1.15] lg:scale-[1.15] pointer-events-none"
+                />
+
+                {/* Subtle Semantic Glow */}
+                <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+                  <div className="h-64 w-64 lg:h-80 lg:w-80 rounded-full bg-accent/10 blur-[140px]" />
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
-        
-        {/* Secondary Dashboard Mockup Reveal (Clean Premium Wrapper) */}
-        <div data-hero-mockup className="relative mt-16 md:mt-24 w-full rounded-modal bg-surface border border-border shadow-card-lg p-4 sm:p-8 overflow-hidden">
-          {/* Refined subtle glow */}
-          <div className="absolute -inset-x-5 -top-5 -z-10 h-40 bg-gradient-to-r from-accent/10 to-accent-cyan/10 blur-3xl" />
 
+        {/* Secondary Dashboard Mockup Reveal (Plain Image) */}
+        <div data-hero-mockup className="relative mt-12 md:mt-20 w-full">
           <Image
             src="/images/dashboard/5.png"
             alt="Hero Dashboard Mockup"
             width={1200}
             height={800}
-            className="animate-float w-full h-auto rounded-card shadow-card-md border border-border object-cover"
+            className="animate-float w-full h-auto object-cover"
           />
         </div>
       </Container>

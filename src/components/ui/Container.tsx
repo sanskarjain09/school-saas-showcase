@@ -10,10 +10,10 @@ interface ContainerProps {
 }
 
 const sizeStyles: Record<ContainerSize, string> = {
-  sm: "max-w-3xl",  // 768px - For narrow forms, blogs, or tight CTAs
-  md: "max-w-5xl",  // 1024px - For modals or medium content
-  lg: "max-w-7xl",  // 1280px - DEFAULT: For all main landing page sections
-  full: "max-w-[1440px]", // 1440px - For ultra-wide dashboards
+  sm: "max-w-3xl",  // 768px
+  md: "max-w-5xl",  // 1024px
+  lg: "max-w-[1440px]",  // 1440px - Increased from 1280px
+  full: "max-w-[1600px]", // 1600px - Increased from 1440px
 };
 
 export function Container({
@@ -30,7 +30,7 @@ export function Container({
         // 2. Strict Layout Width (Default: max-w-7xl / 1280px)
         sizeStyles[size],
         // 3. Responsive Horizontal Padding Scale
-        "px-4 sm:px-6 lg:px-8",
+        "px-4 md:px-6 lg:px-8",
         className
       )}
     >

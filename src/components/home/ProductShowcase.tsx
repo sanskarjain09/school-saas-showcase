@@ -13,7 +13,7 @@ import { FadeUp } from "@/components/animations/FadeUp";
 import { accentText } from "@/lib/theme";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+
 
 export function ProductShowcase() {
   const autoplay = Autoplay({
@@ -72,7 +72,7 @@ export function ProductShowcase() {
         />
 
         {/* Carousel Wrapper with Side Padding to keep arrows away from content */}
-        <div className="relative mt-14 lg:mt-20 px-4 sm:px-10 lg:px-16">
+        <div className="relative mt-14 lg:mt-20 px-0 sm:px-10 lg:px-16">
 
           {/* Left Navigation Arrow */}
           <button
@@ -100,7 +100,7 @@ export function ProductShowcase() {
                 return (
                   <div
                     key={product.id}
-                    className="min-w-0 flex-[0_0_88%] sm:flex-[0_0_100%] pr-4 sm:pr-0 px-2 sm:px-4"
+                    className="min-w-0 flex-[0_0_100%]"
                   >
                     <div
                       className={cn(
@@ -118,12 +118,12 @@ export function ProductShowcase() {
                           </p>
 
                           {/* Google-Style Large Heading */}
-                          <h3 className="text-2xl md:text-4xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
+                          <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
                             {product.title}
                           </h3>
 
                           {/* Description */}
-                          <p className="mt-3 md:mt-6 text-base md:text-lg text-muted leading-relaxed">
+                          <p className="mt-3 md:mt-6 text-sm sm:text-base md:text-lg text-muted leading-relaxed">
                             {product.description}
                           </p>
 
@@ -137,25 +137,19 @@ export function ProductShowcase() {
                             ))}
                           </ul>
 
-                          {/* Pill-shaped CTA Action */}
-                          <div className="mt-6 md:mt-10">
-                            <Button href={product.cta.href} variant="secondary" className="w-full sm:w-auto" showArrow>
-                              {product.cta.label}
-                            </Button>
-                          </div>
 
                         </div>
                       </FadeUp>
 
                       {/* Left/Right Mockup Showcase */}
                       <FadeUp delay={0.02}>
-                        <div className="relative flex justify-center w-full -mb-12 lg:mb-0">
+                        <div className="relative flex justify-center w-full mt-6 lg:mt-0">
                           <Image
                             src={product.image}
                             alt={product.title}
                             width={1000}
                             height={750}
-                            className="w-full h-auto rounded-card shadow-card-lg border border-border object-cover scale-[1.35] md:scale-110 lg:scale-100 origin-center"
+                            className="w-full h-auto rounded-none shadow-card-lg border border-border object-cover"
                           />
                         </div>
                       </FadeUp>

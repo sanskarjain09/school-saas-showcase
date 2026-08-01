@@ -64,12 +64,12 @@ export function CoreModules() {
         <Heading
           eyebrow="Core Modules"
           title="The operational backbone behind the showcase."
-          description="Beyond the flagship products, JINANAM Campus covers every corner of daily school operations."
+          description="Beyond the flagship products, JiNANAM Campus covers every corner of daily school operations."
           align="center"
           className="mx-auto max-w-3xl"
         />
 
-        <div className="relative mt-14">
+        <div className="relative mt-4 md:mt-10">
           {/* Navigation Arrows */}
           <button
             onClick={scrollPrev}
@@ -92,8 +92,8 @@ export function CoreModules() {
 
             {/* Slider Viewport */}
             <div className="overflow-hidden" ref={emblaRef}>
-              {/* py-16 is very important here so the top absolute icon doesn't get cut off! */}
-              <div className="flex touch-pan-y py-16 px-2">
+              {/* pt-14 is important here so the top absolute icon doesn't get cut off! */}
+              <div className="flex touch-pan-y pt-14 pb-2 px-2">
                 {moduleCategories.map((module, index) => {
                   const Icon = module.icon as React.ElementType;
 
@@ -108,7 +108,7 @@ export function CoreModules() {
                       key={module.id || index}
                       className="min-w-0 flex-[0_0_100%] px-4 sm:flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
                     >
-                      <FadeUp delay={(index % 3) *0.02}>
+                      <FadeUp delay={(index % 3) * 0.02}>
                         <div
                           style={{
                             transform: `scale(${scale}) rotateY(${rotate}deg) translateY(${distance === 0 ? -12 : 0}px)`,
@@ -149,14 +149,14 @@ export function CoreModules() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="mt-8 flex justify-center gap-3">
+          <div className="mt-4 flex justify-center gap-3">
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
                 className={`h-2 rounded-full transition-all duration-500 ${index === selectedIndex
-                    ? "w-10 bg-accent" // Matched dot color to your card's icon theme
-                    : "w-2 bg-border hover:bg-muted"
+                  ? "w-10 bg-accent" // Matched dot color to your card's icon theme
+                  : "w-2 bg-border hover:bg-muted"
                   }`}
               />
             ))}

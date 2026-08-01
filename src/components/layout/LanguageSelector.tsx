@@ -34,7 +34,7 @@ export function LanguageSelector() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-hover hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
+        className="flex items-center gap-1.5 rounded-full px-3 py-2 text-base font-medium text-muted transition-colors hover:bg-surface-hover hover:text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -50,7 +50,7 @@ export function LanguageSelector() {
         )}
       >
         <div className="mb-2 border-b border-border p-2">
-          <p className="text-xs font-medium text-foreground">
+          <p className="text-sm font-medium text-foreground">
             Our platform supports these languages, you can easily switch.
           </p>
         </div>
@@ -58,10 +58,10 @@ export function LanguageSelector() {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              className="flex w-full items-center justify-start gap-3 rounded-lg px-2 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-hover hover:text-foreground"
+              className="flex w-full items-center justify-start gap-3 rounded-lg px-2 py-2 text-base font-medium text-muted transition-colors hover:bg-surface-hover hover:text-foreground"
               onClick={() => setIsOpen(false)}
             >
-              <span className="text-xs opacity-60 w-12 text-left">{lang.symbol}</span>
+              <span className="text-sm opacity-60 w-12 text-left">{lang.symbol}</span>
               <span>{lang.name}</span>
             </button>
           ))}
