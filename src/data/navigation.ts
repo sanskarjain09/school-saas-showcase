@@ -6,8 +6,8 @@ export const navigationData: NavigationData = {
     { label: "Features", href: "/features" },
     { label: "White Label", href: "/white-label" },
     { label: "Industries", href: "/industries" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact-us" },
-    { label: "About Us", href: "/about" },
   ],
   cta: { label: "Book a Demo", href: ROUTES.demo },
 };
