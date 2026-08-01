@@ -27,8 +27,8 @@ export default function Contact() {
               <div className="mt-12 flex flex-col gap-8">
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-accent uppercase">Email us</p>
-                  <a href="mailto:hello@jinanam.in" className="mt-2 text-xl font-medium text-foreground transition-colors hover:text-accent break-all">
-                    hello@jinanam.in
+                  <a href="mailto:hello@jinanamcampus.in" className="mt-2 text-xl font-medium text-foreground transition-colors hover:text-accent break-all">
+                    hello@jinanamcampus.in
                   </a>
                 </div>
 
