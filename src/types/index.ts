@@ -110,6 +110,7 @@ export interface ProductShowcaseItem {
   cta: { label: string; href: string };
   mockup: MockupType;   // Cleaned up inline union
   accent: ThemeAccent;  // Cleaned up inline union
+  image: string;
 }
 
 // ==========================================

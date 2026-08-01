@@ -10,8 +10,8 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 import { FadeUp } from "@/components/animations/FadeUp";
-import { DashboardMockup } from "./DashboardMockup";
 import { accentText } from "@/lib/theme";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
@@ -73,7 +73,7 @@ export function ProductShowcase() {
 
         {/* Carousel Wrapper with Side Padding to keep arrows away from content */}
         <div className="relative mt-14 lg:mt-20 px-4 sm:px-10 lg:px-16">
-          
+
           {/* Left Navigation Arrow */}
           <button
             onClick={scrollPrev}
@@ -104,14 +104,14 @@ export function ProductShowcase() {
                   >
                     <div
                       className={cn(
-                        "grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20",
-                        reversed && "lg:[&>*:first-child]:order-2"
+                        "grid grid-cols-1 items-center gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16",
+                        reversed && "lg:[&>*:first-child]:order-2 lg:grid-cols-[7fr_5fr]"
                       )}
                     >
                       {/* Left/Right Text Content (Google Minimalist Style) */}
                       <FadeUp>
                         <div className="flex flex-col items-start max-w-xl">
-                          
+
                           {/* Eyebrow */}
                           <p className={cn("mb-4 text-sm font-semibold tracking-wider uppercase", accentText[product.accent])}>
                             {product.eyebrow}
@@ -150,7 +150,13 @@ export function ProductShowcase() {
                       {/* Left/Right Mockup Showcase */}
                       <FadeUp delay={0.02}>
                         <div className="relative flex justify-center w-full">
-                          <DashboardMockup kind={product.mockup} accent={product.accent} />
+                          <Image
+                            src={product.image}
+                            alt={product.title}
+                            width={1000}
+                            height={750}
+                            className="w-full h-auto rounded-card shadow-card-lg border border-border object-cover"
+                          />
                         </div>
                       </FadeUp>
                     </div>
@@ -167,11 +173,10 @@ export function ProductShowcase() {
                 key={index}
                 onClick={() => scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  index === selectedIndex
+                className={`h-2 rounded-full transition-all duration-500 ${index === selectedIndex
                     ? "w-10 bg-accent" // Active Google blue dot
                     : "w-2 bg-border hover:bg-muted"
-                }`}
+                  }`}
               />
             ))}
           </div>

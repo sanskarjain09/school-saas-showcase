@@ -10,7 +10,6 @@ import { heroData } from "@/data/hero";
 import { Container } from "@/components/ui/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { Counter } from "@/components/animations/Counter";
-import { DashboardMockup } from "./DashboardMockup";
 import { ANIMATION } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
@@ -141,10 +140,12 @@ export function Hero() {
           {/* Refined subtle glow */}
           <div className="absolute -inset-x-5 -top-5 -z-10 h-40 bg-gradient-to-r from-accent/10 to-accent-cyan/10 blur-3xl" />
 
-          <DashboardMockup
-            kind="reports"
-            accent="blue"
-            className="animate-float w-full h-auto rounded-card shadow-card-md border border-border"
+          <Image
+            src="/images/dashboard/5.png"
+            alt="Hero Dashboard Mockup"
+            width={1200}
+            height={800}
+            className="animate-float w-full h-auto rounded-card shadow-card-md border border-border object-cover"
           />
         </div>
       </Container>

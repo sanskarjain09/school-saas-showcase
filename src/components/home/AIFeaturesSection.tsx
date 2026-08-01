@@ -2,7 +2,7 @@
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { FadeUp } from "@/components/animations/FadeUp";
-import { DashboardMockup } from "./DashboardMockup";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 export function AIFeaturesSection() {
@@ -35,10 +35,11 @@ export function AIFeaturesSection() {
           {/* Right Side: Visual / Dashboard Mockup */}
           <FadeUp delay={0.02}>
             <div className="relative w-full rounded-2xl overflow-hidden">
-              {/* DashboardMockup acts as a visual preview */}
-              <DashboardMockup 
-                kind="ai" 
-                accent="cyan" 
+              <Image 
+                src="/images/dashboard/1.png"
+                alt="AI Dashboard Mockup"
+                width={1200}
+                height={800}
                 className="w-full h-auto shadow-glow-cyan rounded-2xl" 
               />
             </div>
