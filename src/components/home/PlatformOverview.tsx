@@ -44,8 +44,8 @@ export function PlatformOverview() {
                 src="/images/heroOne.png"
                 alt="JINANAM Campus Platform Overview"
                 fill
-                /* Scale ko bada kiya taaki diagram khul ke aaye aur chota na lage */
-                className="object-contain drop-shadow-2xl scale-125 lg:scale-150 origin-center"
+                /* Added responsive scaling to make it larger on desktop without overlapping navbar */
+                className="object-contain w-full h-full drop-shadow-2xl origin-center scale-110 md:scale-125 lg:scale-[1.4]"
               />
               
               {/* Subtle Semantic Glow */}

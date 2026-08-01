@@ -14,7 +14,7 @@ export function ModuleCard({ module }: ModuleCardProps) {
         <Icon className="h-6 w-6 text-accent-purple" aria-hidden />
       </div>
 
-      <h3 className="mb-2 text-body font-semibold text-foreground">
+      <h3 className="mb-2 text-base sm:text-body font-semibold text-foreground break-words">
         {module.title}
       </h3>
 

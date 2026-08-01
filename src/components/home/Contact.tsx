@@ -27,14 +27,14 @@ export function Contact() {
               <div className="mt-12 flex flex-col gap-8">
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-muted uppercase">Email us</p>
-                  <a href="mailto:hello@jinanamcampus.in" className="mt-2 text-xl font-medium text-accent transition-colors hover:text-accent-hover">
+                  <a href="mailto:hello@jinanamcampus.in" className="mt-2 text-xl font-medium text-accent transition-colors hover:text-accent-hover break-all">
                     hello@jinanamcampus.in
                   </a>
                 </div>
                 
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-muted uppercase">Call us</p>
-                  <a href="tel:+918693838281" className="mt-2 text-xl font-medium text-accent transition-colors hover:text-accent-hover">
+                  <a href="tel:+918693838281" className="mt-2 text-xl font-medium text-accent transition-colors hover:text-accent-hover break-words">
                     +91 869 3838 281
                   </a>
                 </div>

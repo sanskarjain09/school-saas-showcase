@@ -35,8 +35,8 @@ export function Pricing() {
                 <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
                 <p className="mt-1.5 text-sm text-muted">{plan.description}</p>
 
-                <div className="mt-6 flex items-baseline gap-1.5">
-                  <span className="text-4xl font-semibold tracking-tight text-foreground">{plan.price}</span>
+                <div className="mt-6 flex items-baseline gap-1.5 min-w-0">
+                  <span className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground break-words w-full">{plan.price}</span>
                 </div>
                 <p className="mt-1 text-xs text-muted">{plan.billingNote}</p>
 

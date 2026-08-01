@@ -128,7 +128,7 @@ export default function FeaturesPage() {
                   alt="JiNANAM Campus Devices"
                   fill
                   priority // Ye image upar hai to priority dene se fast load hogi
-                  className="object-contain drop-shadow-2xl scale-110"
+                  className="object-contain w-full h-full drop-shadow-2xl scale-110 md:scale-125 lg:scale-[1.3] origin-center"
                 />
               </div>
             </FadeUp>

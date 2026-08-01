@@ -87,7 +87,7 @@ export default function AboutPage() {
               alt="Connected Campus Diagram"
               width={800}
               height={800}
-              className="w-full h-full object-contain scale-125 lg:scale-150 drop-shadow-2xl"
+              className="w-full h-full object-contain drop-shadow-2xl scale-105 md:scale-110 lg:scale-[1.15] origin-center"
             />
           </div>
         </FadeUp>

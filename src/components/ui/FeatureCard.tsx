@@ -24,8 +24,8 @@ export function FeatureCard({ icon: IconComponent, title, description }: Feature
         <Icon className="h-6 w-6 text-accent" aria-hidden />
       </div>
       
-      {/* 3. Title: Using our semantic typography (text-body) & spacing (content-xs -> 20px) tokens */}
-      <h3 className="mb-content-xs text-body font-semibold text-foreground">
+      {/* 3. Title: Using our semantic typography & spacing tokens */}
+      <h3 className="mb-content-xs text-base sm:text-body font-semibold text-foreground break-words">
         {title}
       </h3>
       

@@ -27,16 +27,15 @@ export default function Contact() {
               <div className="mt-12 flex flex-col gap-8">
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-accent uppercase">Email us</p>
-                  <a href="mailto:hello@jinanam.in" className="mt-2 text-xl font-medium text-foreground transition-colors hover:text-accent">
+                  <a href="mailto:hello@jinanam.in" className="mt-2 text-xl font-medium text-foreground transition-colors hover:text-accent break-all">
                     hello@jinanam.in
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-accent uppercase">Call us</p>
-                  <a href="tel:+918693838281" className="mt-2 text-xl font-medium text-foreground transition-colors hover:text-accent">
+                  <a href="tel:+918693838281" className="mt-2 text-xl font-medium text-foreground transition-colors hover:text-accent break-words">
                     +91 869 3838 281
-
                   </a>
                 </div>
 

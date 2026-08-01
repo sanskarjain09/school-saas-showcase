@@ -26,12 +26,12 @@ export function StatCard({ icon, value, suffix, label, className }: StatCardProp
       </div>
       
       {/* 3. Number/Counter: Preserving the font-display utility but standardizing size */}
-      <div className="font-display text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+      <div className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-foreground md:text-4xl truncate w-full">
         <Counter value={value} suffix={suffix} />
       </div>
       
       {/* 4. Label: Using semantic text-small and 20px spacing (mt-content-xs) */}
-      <p className="mt-content-xs text-small text-muted">
+      <p className="mt-content-xs text-xs sm:text-small text-muted break-words w-full">
         {label}
       </p>
       

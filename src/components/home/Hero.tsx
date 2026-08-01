@@ -97,14 +97,14 @@ export function Hero() {
             {/* Minimalist Trust Indicators / Stats */}
             <div
               data-hero-fade
-              className="mt-12 grid w-full grid-cols-3 gap-6 border-t border-border dark:border-white/10 pt-8"
+              className="mt-12 grid w-full grid-cols-3 gap-2 sm:gap-4 md:gap-6 border-t border-border dark:border-white/10 pt-8"
             >
               {heroData.stats.map((stat) => (
-                <div key={stat.id}>
-                  <p className="text-3xl md:text-4xl font-medium tracking-tight text-foreground">
+                <div key={stat.id} className="min-w-0 flex flex-col justify-center">
+                  <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-foreground truncate">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="mt-1 text-xs font-semibold tracking-wider text-muted uppercase">
+                  <p className="mt-1 text-[10px] sm:text-xs font-semibold tracking-wider text-muted uppercase break-words sm:break-normal">
                     {stat.label}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ export function Hero() {
                 alt="Platform Illustration"
                 fill
                 priority
-                className="object-contain drop-shadow-2xl scale-110"
+                className="object-contain w-full h-full drop-shadow-2xl scale-110 md:scale-125 lg:scale-[1.3]"
               />
             </div>
             
