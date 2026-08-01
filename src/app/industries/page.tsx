@@ -229,7 +229,7 @@ export default function IndustriesPage() {
                 <Container>
                     <div className="mb-16 text-center max-w-2xl mx-auto">
                         <p className="text-xs font-semibold tracking-[0.2em] text-accent mb-3">WHY JiNANAM</p>
-                        <Heading title="Why Every Institution Chooses Jinanam Campus" align="center" />
+                        <Heading title="Why Every Institution Chooses JiNANAM Campus" align="center" />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
