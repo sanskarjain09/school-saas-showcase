@@ -60,7 +60,7 @@ export function ProductShowcase() {
   }, [emblaApi]);
 
   return (
-    <Section id="products" className="overflow-hidden py-section-sm lg:py-section-lg bg-background">
+    <Section id="products" className="overflow-hidden pt-section-sm pb-0 lg:py-section-lg bg-background">
       <Container>
         {/* Centered Section Header */}
         <Heading
@@ -100,11 +100,11 @@ export function ProductShowcase() {
                 return (
                   <div
                     key={product.id}
-                    className="min-w-0 flex-[0_0_100%] px-2"
+                    className="min-w-0 flex-[0_0_88%] sm:flex-[0_0_100%] pr-4 sm:pr-0 px-2 sm:px-4"
                   >
                     <div
                       className={cn(
-                        "grid grid-cols-1 items-center gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16",
+                        "grid grid-cols-1 items-center gap-6 md:gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16",
                         reversed && "lg:[&>*:first-child]:order-2 lg:grid-cols-[7fr_5fr]"
                       )}
                     >
@@ -113,24 +113,24 @@ export function ProductShowcase() {
                         <div className="flex flex-col items-start max-w-xl">
 
                           {/* Eyebrow */}
-                          <p className={cn("mb-4 text-sm font-semibold tracking-wider uppercase", accentText[product.accent])}>
+                          <p className={cn("mb-2 md:mb-4 text-xs md:text-sm font-semibold tracking-wider uppercase", accentText[product.accent])}>
                             {product.eyebrow}
                           </p>
 
                           {/* Google-Style Large Heading */}
-                          <h3 className="text-3xl md:text-4xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
+                          <h3 className="text-2xl md:text-4xl lg:text-section font-bold tracking-tight text-foreground leading-[1.15]">
                             {product.title}
                           </h3>
 
                           {/* Description */}
-                          <p className="mt-6 text-lg text-muted leading-relaxed">
+                          <p className="mt-3 md:mt-6 text-base md:text-lg text-muted leading-relaxed">
                             {product.description}
                           </p>
 
                           {/* Capabilities Bullet List (2 Columns) */}
-                          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                          <ul className="mt-5 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 w-full">
                             {product.capabilities.map((cap) => (
-                              <li key={cap.id} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                              <li key={cap.id} className="flex items-start gap-2.5 text-xs md:text-sm text-foreground/80">
                                 <span className={cn("mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-current", accentText[product.accent])} />
                                 {cap.text}
                               </li>
@@ -138,7 +138,7 @@ export function ProductShowcase() {
                           </ul>
 
                           {/* Pill-shaped CTA Action */}
-                          <div className="mt-10">
+                          <div className="mt-6 md:mt-10">
                             <Button href={product.cta.href} variant="secondary" className="w-full sm:w-auto" showArrow>
                               {product.cta.label}
                             </Button>
@@ -149,13 +149,13 @@ export function ProductShowcase() {
 
                       {/* Left/Right Mockup Showcase */}
                       <FadeUp delay={0.02}>
-                        <div className="relative flex justify-center w-full">
+                        <div className="relative flex justify-center w-full -mb-12 lg:mb-0">
                           <Image
                             src={product.image}
                             alt={product.title}
                             width={1000}
                             height={750}
-                            className="w-full h-auto rounded-card shadow-card-lg border border-border object-cover"
+                            className="w-full h-auto rounded-card shadow-card-lg border border-border object-cover scale-[1.35] md:scale-110 lg:scale-100 origin-center"
                           />
                         </div>
                       </FadeUp>

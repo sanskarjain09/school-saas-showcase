@@ -144,7 +144,7 @@ export default function IndustriesPage() {
                                         src={inst.img}
                                         alt={inst.title}
                                         fill
-                                        className="object-cover w-full h-full"
+                                        className="object-contain w-full h-full"
                                     />
                                 </div>
                             </FadeUp>

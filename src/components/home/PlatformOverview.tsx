@@ -1,12 +1,49 @@
+"use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 
 export function PlatformOverview() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || isInteracting) return;
+    
+    let animationId: number;
+    let direction = 1;
+
+    const scroll = () => {
+      if (window.innerWidth >= 1024) return;
+      
+      el.scrollLeft += direction * 0.4;
+      
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+        direction = -1;
+      } else if (el.scrollLeft <= 1) {
+        direction = 1;
+      }
+      
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    // Small delay before auto-scrolling starts
+    const timeoutId = setTimeout(() => {
+      animationId = requestAnimationFrame(scroll);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (animationId) cancelAnimationFrame(animationId);
+    };
+  }, [isInteracting]);
+
   return (
-    <Section id="platform-overview" className="overflow-hidden py-section-sm lg:py-section-lg bg-background border-t border-border">
+    <Section id="platform-overview" className="overflow-hidden pt-section-sm pb-0 lg:py-section-lg bg-background border-t border-border">
       <Container>
         {/* Grid gap ko bada kiya taaki dono sides ko saans lene ki jagah mile */}
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
@@ -37,20 +74,28 @@ export function PlatformOverview() {
             </div>
           </div>
 
-          {/* Right Side: Large, Uncompressed Image Component */}
-          <div className="relative flex w-full justify-center lg:justify-end">
-            <div className="relative w-full aspect-video lg:aspect-[16/10] flex items-center justify-center">
-              <Image
-                src="/images/heroOne.png"
-                alt="JINANAM Campus Platform Overview"
-                fill
-                /* Added responsive scaling to make it larger on desktop without overlapping navbar */
-                className="object-contain w-full h-full drop-shadow-2xl origin-center scale-110 md:scale-125 lg:scale-[1.4]"
-              />
-              
-              {/* Subtle Semantic Glow */}
-              <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
-                <div className="h-96 w-96 rounded-full bg-accent/10 blur-[140px]" />
+          {/* Right Side: Large, Scrollable Image on Mobile */}
+          <div className="relative flex w-full justify-center lg:justify-end -mb-16 lg:mb-0">
+            <div 
+              ref={scrollRef}
+              className="w-[100vw] overflow-x-auto overflow-y-visible lg:overflow-visible flex items-center scrollbar-hide snap-x snap-mandatory"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              onTouchStart={() => setIsInteracting(true)}
+              onTouchEnd={() => { setTimeout(() => setIsInteracting(false), 2000) }}
+            >
+              {/* Force image to be wide on mobile to enable scrolling */}
+              <div className="relative w-[150%] sm:w-[130%] shrink-0 lg:w-full aspect-[1.2] lg:aspect-[16/10] flex items-center justify-center pl-4 lg:pl-0">
+                <Image
+                  src="/images/heroOne.png"
+                  alt="JINANAM Campus Platform Overview"
+                  fill
+                  className="object-contain w-full h-full drop-shadow-2xl origin-center lg:scale-[1.4] pointer-events-none"
+                />
+                
+                {/* Subtle Semantic Glow */}
+                <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+                  <div className="h-64 w-64 lg:h-96 lg:w-96 rounded-full bg-accent/10 blur-[140px]" />
+                </div>
               </div>
             </div>
           </div>
