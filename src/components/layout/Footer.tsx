@@ -13,7 +13,7 @@ export function Footer() {
       {/* 1. Responsive Vertical Padding aligned with the Design System */}
       <Container className="pt-section-sm pb-8">
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-6 lg:gap-12">
-          
+
           {/* Brand & Description */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2">
@@ -23,15 +23,46 @@ export function Footer() {
                 width={200}
                 height={50}
                 className="object-contain"
-                // Removed 'priority' - Footer images should be lazy loaded for better LCP
+              // Removed 'priority' - Footer images should be lazy loaded for better LCP
               />
             </Link>
-            
+
             {/* Semantic spacing (mt-content-sm) and typography (text-small) */}
             <p className="mt-content-sm max-w-xs text-small leading-relaxed text-muted">
               {companyInfo.description}
             </p>
-            
+
+            {/* App Download Buttons */}
+            <div className="mt-6 flex flex-row items-center gap-3">
+              <Link
+                href="/"
+                className="transition-transform duration-300 hover:scale-105"
+                aria-label="Download on the App Store"
+              >
+                <Image
+                  src="/images/app-store-badge.svg"
+                  alt="Download on the App Store"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </Link>
+
+              <Link
+                href="/"
+                className="transition-transform duration-300 hover:scale-105"
+                aria-label="Get it on Google Play"
+              >
+                <Image
+                  src="/images/play-store-badge.svg"
+                  alt="Get it on Google Play"
+                  width={135}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </Link>
+            </div>
+
             {/* Social Links with improved touch targets (40x40) */}
             {/* <div className="mt-content-md flex items-center gap-3">
               {SOCIAL_LINKS.map((social) => {
@@ -60,8 +91,8 @@ export function Footer() {
               <ul className="mt-content-sm space-y-3">
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link 
-                      href={link.href} 
+                    <Link
+                      href={link.href}
                       className="text-small text-muted transition-colors duration-200 hover:text-accent"
                     >
                       {link.label}
