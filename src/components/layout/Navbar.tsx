@@ -75,7 +75,9 @@ export function Navbar() {
           <div className="hidden items-center gap-5 lg:flex">
             <LanguageSelector />
             <Link
-              href="/admin/login"
+              href="https://www.jinanam.tech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-base font-semibold text-foreground/80 transition-colors duration-200 hover:text-foreground"
             >
               Admin Login
@@ -128,7 +130,9 @@ export function Navbar() {
             </div>
 
             <Link
-              href="/admin/login"
+              href="https://www.jinanam.tech"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="text-center text-base font-semibold text-foreground/80 transition-colors hover:text-foreground"
             >

@@ -1,8 +1,38 @@
 "use client";
+import { useState } from "react";
 
 export function ContactForm() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Construct the email body
+    const subject = encodeURIComponent("New Contact Form Submission from CampusHub");
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Work Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+
+    // Trigger the mailto link
+    window.location.href = `mailto:hello@jinanam.tech?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+    <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
       {/* Name Fields */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="flex flex-col gap-2">
@@ -10,6 +40,9 @@ export function ContactForm() {
           <input
             type="text"
             id="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
             placeholder="John"
             className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
           />
@@ -19,6 +52,9 @@ export function ContactForm() {
           <input
             type="text"
             id="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
             placeholder="Doe"
             className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
           />
@@ -31,6 +67,9 @@ export function ContactForm() {
         <input
           type="email"
           id="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
           placeholder="john@school.edu"
           className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
         />
@@ -42,6 +81,9 @@ export function ContactForm() {
         <textarea
           id="message"
           rows={4}
+          value={formData.message}
+          onChange={handleChange}
+          required
           placeholder="Tell us about your school's requirements..."
           className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"
         ></textarea>

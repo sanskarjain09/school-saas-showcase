@@ -45,6 +45,14 @@ export default function Contact() {
                     203, Navghar Road, Mulund East. Mumbai 400081. Maharashtra. India
                   </p>
                 </div>
+
+                <div>
+                  <p className="text-sm font-semibold tracking-wider text-accent uppercase">Support</p>
+                  <p className="mt-2 text-sm text-muted">We're here to help you with any issues.</p>
+                  <a href="mailto:hello@jinanam.tech" className="mt-1 text-xl font-medium text-foreground transition-colors hover:text-accent break-all block">
+                    hello@jinanam.tech
+                  </a>
+                </div>
               </div>
             </div>
           </FadeUp>
