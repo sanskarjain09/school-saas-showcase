@@ -48,7 +48,7 @@ export default function Contact() {
 
                 <div>
                   <p className="text-sm font-semibold tracking-wider text-accent uppercase">Support</p>
-                  <p className="mt-2 text-sm text-muted">We're here to help you with any issues.</p>
+                  <p className="mt-2 text-sm text-muted">We&apos;re here to help you with any issues.</p>
                   <a href="mailto:hello@jinanam.tech" className="mt-1 text-xl font-medium text-foreground transition-colors hover:text-accent break-all block">
                     hello@jinanam.tech
                   </a>
