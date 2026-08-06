@@ -130,7 +130,7 @@ export function Navbar() {
             </div>
 
             <Link
-              href="https://www.jinanam.tech"
+              href="https://jinanam.tech/login"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
